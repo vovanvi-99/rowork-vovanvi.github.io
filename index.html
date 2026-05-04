@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Võ Văn Vĩ — Creative Copywriter Portfolio</title>
+<meta name="description" content="Creative Copywriter tại HCMC. TVC, IMC Campaigns, Social Media. Highlands Coffee, Mastercard, Spotify và nhiều hơn nữa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#0d0d0d;
+  --surface:#161616;
+  --card:#1a1a1a;
+  --border:#2a2a2a;
+  --red:#e8220a;
+  --orange:#ff6b00;
+  --gold:#f5c518;
+  --text:#e0e0e0;
+  --muted:#888;
+  --white:#fff;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Roboto',sans-serif;min-height:100vh;width:100%;overflow-x:hidden;}
+
+/* TOPBAR */
+.topbar{background:#111;border-bottom:2px solid var(--red);padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100;}
+.logo{font-family:'Oswald',sans-serif;font-size:24px;font-weight:700;letter-spacing:2px;text-decoration:none;}
+.logo .ro{color:var(--white);}
+.logo .phim{color:var(--red);}
+.logo .num{color:var(--orange);}
+.nav-links{display:flex;gap:4px;}
+.nav-link{font-size:13px;color:var(--muted);padding:7px 14px;border-radius:3px;cursor:pointer;transition:all 0.15s;text-decoration:none;font-family:'Roboto',sans-serif;}
+.nav-link:hover,.nav-link.active{color:var(--white);background:rgba(232,34,10,0.15);}
+.nav-link.active{color:var(--red);}
+.hire-btn{background:var(--red);color:#fff;border:none;padding:9px 20px;border-radius:3px;font-size:13px;font-weight:500;cursor:pointer;font-family:'Roboto',sans-serif;letter-spacing:0.03em;transition:background 0.15s;text-decoration:none;display:inline-block;}
+.hire-btn:hover{background:#c01a05;}
+
+/* HERO */
+.hero{position:relative;height:460px;overflow:hidden;background:linear-gradient(135deg,#0a0005 0%,#15020a 40%,#050a15 100%);}
+.hero-film-strip{position:absolute;top:0;left:0;right:0;height:4px;background:repeating-linear-gradient(90deg,var(--red) 0px,var(--red) 20px,transparent 20px,transparent 28px);}
+.hero-vignette{position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 50% 50%,transparent 30%,rgba(0,0,0,0.65) 100%);}
+.hero-side-fade{position:absolute;inset:0;background:linear-gradient(to right,rgba(13,13,13,0.97) 0%,rgba(13,13,13,0.25) 42%,rgba(13,13,13,0.25) 58%,rgba(13,13,13,0.97) 100%);}
+.hero-bottom-fade{position:absolute;bottom:0;left:0;right:0;height:130px;background:linear-gradient(to top,var(--bg) 0%,transparent 100%);}
+
+.hero-posters{position:absolute;right:0;top:0;bottom:0;width:55%;display:flex;gap:10px;padding:24px 28px 24px 0;align-items:center;justify-content:flex-end;overflow:hidden;}
+.mini-poster{border-radius:6px;overflow:hidden;flex-shrink:0;position:relative;display:flex;align-items:flex-end;justify-content:center;}
+.mp1{width:88px;height:132px;background:linear-gradient(160deg,#1a0800,#4a1500);opacity:0.5;}
+.mp2{width:108px;height:162px;background:linear-gradient(160deg,#0a1020,#152040);opacity:0.7;}
+.mp3{width:132px;height:198px;background:linear-gradient(160deg,#1a0a2a,#350a50);z-index:2;}
+.mp4{width:108px;height:162px;background:linear-gradient(160deg,#0a2a0a,#0a4510);opacity:0.7;}
+.mp5{width:88px;height:132px;background:linear-gradient(160deg,#2a1a0a,#503010);opacity:0.5;}
+.mp-icon{font-size:28px;position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);}
+.mp-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,0.9),transparent);padding:8px 6px 6px;font-size:9px;color:#ccc;font-family:'Oswald',sans-serif;letter-spacing:0.06em;text-align:center;}
+
+.hero-content{position:absolute;left:28px;top:50%;transform:translateY(-50%);max-width:380px;z-index:3;}
+.hero-badge-row{display:flex;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
+.hd-badge{background:var(--red);color:#fff;font-size:9px;font-weight:700;padding:3px 7px;border-radius:2px;letter-spacing:0.08em;}
+.new-badge{background:var(--orange);color:#fff;font-size:9px;font-weight:700;padding:3px 7px;border-radius:2px;letter-spacing:0.08em;}
+.lang-badge{border:1px solid var(--muted);color:var(--muted);font-size:9px;padding:2px 7px;border-radius:2px;letter-spacing:0.05em;}
+.hero-title{font-family:'Oswald',sans-serif;font-size:clamp(38px,6vw,64px);font-weight:700;color:var(--white);line-height:0.92;letter-spacing:2px;margin-bottom:8px;text-shadow:0 2px 24px rgba(0,0,0,0.9);}
+.hero-title .accent{color:var(--red);}
+.hero-title .sub{font-size:0.42em;color:var(--muted);display:block;letter-spacing:5px;font-weight:400;margin-bottom:6px;}
+.hero-rating{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.imdb-box{background:var(--gold);color:#000;font-size:10px;font-weight:700;padding:3px 8px;border-radius:2px;font-family:'Oswald',sans-serif;letter-spacing:0.05em;}
+.star-score{color:var(--gold);font-size:14px;font-weight:600;}
+.hero-meta-row{font-size:12px;color:var(--muted);margin-bottom:12px;display:flex;gap:14px;flex-wrap:wrap;}
+.hero-desc{font-size:13px;color:rgba(200,200,200,0.8);line-height:1.65;margin-bottom:20px;}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;}
+.action-btn{display:inline-flex;align-items:center;gap:7px;padding:10px 22px;border-radius:3px;font-size:13px;font-weight:500;cursor:pointer;border:none;font-family:'Roboto',sans-serif;transition:all 0.15s;text-decoration:none;}
+.btn-watch{background:var(--red);color:#fff;}
+.btn-watch:hover{background:#c01a05;}
+.btn-info{background:rgba(255,255,255,0.12);color:var(--white);border:1px solid rgba(255,255,255,0.2);}
+.btn-info:hover{background:rgba(255,255,255,0.2);}
+.play-icon{width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:9px solid currentColor;}
+
+/* GENRE FILTERS */
+.genre-row{display:flex;gap:8px;flex-wrap:wrap;padding:18px 28px;}
+.genre-tag{font-size:12px;padding:6px 16px;border-radius:20px;cursor:pointer;border:1px solid var(--border);color:var(--muted);transition:all 0.2s;font-family:'Roboto',sans-serif;background:transparent;}
+.genre-tag:hover{border-color:var(--red);color:var(--text);}
+.genre-tag.active{background:var(--red);color:#fff;border-color:var(--red);}
+
+/* SECTION */
+.section{padding:24px 28px 8px;}
+.section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
+.section-title{font-family:'Oswald',sans-serif;font-size:18px;font-weight:600;color:var(--white);display:flex;align-items:center;gap:10px;letter-spacing:0.5px;}
+.section-title::before{content:'';width:4px;height:22px;background:var(--red);border-radius:2px;display:inline-block;flex-shrink:0;}
+.see-all{font-size:12px;color:var(--red);cursor:pointer;text-decoration:none;}
+.see-all:hover{color:var(--orange);}
+
+/* MOVIE GRID */
+.movie-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;padding:0 28px 24px;}
+
+/* MOVIE CARD */
+.mcard{border-radius:6px;overflow:hidden;position:relative;cursor:pointer;background:var(--card);border:1px solid var(--border);transition:transform 0.22s,border-color 0.22s,box-shadow 0.22s;}
+.mcard:hover{transform:translateY(-5px) scale(1.02);border-color:var(--red);box-shadow:0 12px 40px rgba(232,34,10,0.18);}
+.mcard-poster{width:100%;aspect-ratio:2/3;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.mcard-emoji{font-size:40px;position:relative;z-index:1;}
+.poster-gradient{position:absolute;bottom:0;left:0;right:0;height:65%;background:linear-gradient(to top,rgba(0,0,0,0.95) 0%,transparent 100%);}
+.mcard-overlay{position:absolute;inset:0;background:rgba(232,34,10,0.12);opacity:0;transition:opacity 0.2s;display:flex;align-items:center;justify-content:center;z-index:2;}
+.mcard:hover .mcard-overlay{opacity:1;}
+.overlay-play{width:46px;height:46px;border-radius:50%;border:2px solid #fff;display:flex;align-items:center;justify-content:center;background:rgba(232,34,10,0.85);}
+.overlay-tri{width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;border-left:14px solid #fff;margin-left:3px;}
+.mcard-badge{position:absolute;top:8px;left:8px;display:flex;flex-direction:column;gap:3px;z-index:3;}
+.badge-hd{background:var(--red);color:#fff;font-size:8px;font-weight:700;padding:2px 5px;border-radius:2px;letter-spacing:0.05em;display:inline-block;}
+.badge-ep{background:rgba(0,0,0,0.8);color:var(--orange);font-size:8px;font-weight:600;padding:2px 5px;border-radius:2px;border:1px solid var(--orange);display:inline-block;}
+.badge-new{background:var(--orange);color:#fff;font-size:8px;font-weight:700;padding:2px 5px;border-radius:2px;letter-spacing:0.05em;display:inline-block;}
+.badge-hot{background:#ff0050;color:#fff;font-size:8px;font-weight:700;padding:2px 5px;border-radius:2px;letter-spacing:0.05em;display:inline-block;animation:hotpulse 1.8s ease-in-out infinite;}
+@keyframes hotpulse{0%,100%{opacity:1;}50%{opacity:0.6;}}
+.mcard-rating{position:absolute;top:8px;right:8px;background:rgba(0,0,0,0.85);color:var(--gold);font-size:10px;font-weight:600;padding:2px 7px;border-radius:3px;display:flex;align-items:center;gap:3px;z-index:3;}
+.mcard-info{padding:10px 10px 12px;}
+.mcard-title{font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;color:var(--white);margin-bottom:4px;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.mcard-sub{font-size:10px;color:var(--muted);margin-bottom:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.mcard-tags{display:flex;gap:4px;flex-wrap:wrap;}
+.mcard-tag{font-size:9px;padding:2px 6px;border-radius:2px;}
+.tag-r{background:rgba(232,34,10,0.18);color:#ff6b5b;border:1px solid rgba(232,34,10,0.3);}
+.tag-g{background:rgba(20,180,80,0.14);color:#5dcc80;border:1px solid rgba(20,180,80,0.25);}
+.tag-b{background:rgba(40,120,220,0.14);color:#70b0ff;border:1px solid rgba(40,120,220,0.25);}
+.tag-y{background:rgba(245,197,24,0.14);color:#f5c518;border:1px solid rgba(245,197,24,0.25);}
+.tag-p{background:rgba(160,60,220,0.14);color:#c080f8;border:1px solid rgba(160,60,220,0.25);}
+
+/* SPECIAL ROW */
+.special-row{padding:0 28px 28px;display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.special-card{border-radius:6px;overflow:hidden;border:1px solid var(--border);cursor:pointer;transition:transform 0.2s,border-color 0.2s,box-shadow 0.2s;}
+.special-card:hover{transform:translateY(-3px);border-color:var(--orange);box-shadow:0 8px 32px rgba(255,107,0,0.15);}
+.sc-inner{padding:22px;position:relative;min-height:130px;}
+.sc-bg-a{background:linear-gradient(135deg,#1a0800,#330f00);}
+.sc-bg-b{background:linear-gradient(135deg,#00081a,#001a33);}
+.sc-eyebrow{font-size:10px;letter-spacing:0.18em;color:var(--orange);text-transform:uppercase;margin-bottom:8px;font-weight:600;}
+.sc-title{font-family:'Oswald',sans-serif;font-size:22px;color:var(--white);letter-spacing:1px;line-height:1.1;margin-bottom:8px;}
+.sc-desc{font-size:12px;color:var(--muted);line-height:1.65;}
+.sc-action{margin-top:12px;font-size:12px;color:var(--red);font-weight:500;}
+
+/* ABOUT SECTION */
+.about-bar{margin:0 28px 28px;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:24px 28px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;}
+.about-item{}
+.about-label{font-size:10px;letter-spacing:0.12em;color:var(--muted);text-transform:uppercase;margin-bottom:6px;}
+.about-value{font-family:'Oswald',sans-serif;font-size:16px;color:var(--white);letter-spacing:0.5px;line-height:1.35;}
+.about-value a{color:var(--red);text-decoration:none;}
+.about-value a:hover{color:var(--orange);}
+
+/* FOOTER */
+.rp-footer{background:#0a0a0a;border-top:1px solid var(--border);padding:22px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+.footer-brand{font-family:'Oswald',sans-serif;font-size:16px;color:var(--white);letter-spacing:1px;}
+.footer-brand span{color:var(--red);}
+.footer-sub{font-size:11px;color:#555;margin-top:4px;}
+.footer-links{display:flex;gap:8px;flex-wrap:wrap;}
+.flink{font-size:12px;color:var(--muted);padding:6px 14px;border:1px solid var(--border);border-radius:3px;cursor:pointer;transition:all 0.15s;text-decoration:none;display:inline-block;}
+.flink:hover{color:var(--white);border-color:var(--red);background:rgba(232,34,10,0.1);}
+.footer-copy{font-size:10px;color:#333;width:100%;margin-top:4px;}
+
+/* ANIMATIONS */
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.hero-content{animation:fadeInUp 0.6s ease both;}
+.movie-grid .mcard{animation:fadeInUp 0.4s ease both;}
+.mcard:nth-child(1){animation-delay:0.05s;}
+.mcard:nth-child(2){animation-delay:0.10s;}
+.mcard:nth-child(3){animation-delay:0.15s;}
+.mcard:nth-child(4){animation-delay:0.20s;}
+.mcard:nth-child(5){animation-delay:0.25s;}
+.mcard:nth-child(6){animation-delay:0.30s;}
+.mcard:nth-child(7){animation-delay:0.35s;}
+.mcard:nth-child(8){animation-delay:0.40s;}
+.mcard:nth-child(9){animation-delay:0.45s;}
+.mcard:nth-child(10){animation-delay:0.50s;}
+.mcard:nth-child(11){animation-delay:0.55s;}
+.mcard:nth-child(12){animation-delay:0.60s;}
+
+/* RESPONSIVE */
+@media(max-width:680px){
+  .nav-links{display:none;}
+  .hero{height:auto;padding-bottom:40px;}
+  .hero-posters{display:none;}
+  .hero-side-fade{display:none;}
+  .hero-content{position:relative;left:0;top:0;transform:none;padding:28px 20px 0;}
+  .movie-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));padding:0 16px 20px;}
+  .special-row{grid-template-columns:1fr;padding:0 16px 20px;}
+  .about-bar{grid-template-columns:1fr;padding:18px 20px;}
+  .topbar{padding:0 16px;}
+  .section{padding:20px 16px 8px;}
+  .genre-row{padding:14px 16px;}
+  .rp-footer{padding:18px 16px;}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<nav class="topbar">
+  <div style="display:flex;align-items:center;gap:24px;">
+    <a href="#" class="logo"><span class="ro">VO</span><span class="phim">VAN</span><span class="num">VI</span></a>
+    <div class="nav-links">
+      <a href="#projects" class="nav-link active">Trang Chủ</a>
+      <a href="#projects" class="nav-link">IMC</a>
+      <a href="#projects" class="nav-link">Social</a>
+      <a href="#projects" class="nav-link">TVC</a>
+      <a href="#contact" class="nav-link">Liên Hệ</a>
+    </div>
+  </div>
+  <a href="mailto:your@email.com" class="hire-btn">► Hire Vĩ</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-film-strip"></div>
+  <div class="hero-vignette"></div>
+  <div class="hero-side-fade"></div>
+  <div class="hero-bottom-fade"></div>
+
+  <div class="hero-posters">
+    <div class="mini-poster mp1"><span class="mp-icon">☕</span><div class="mp-label">HIGHLANDS</div></div>
+    <div class="mini-poster mp2"><span class="mp-icon">🎵</span><div class="mp-label">SPOTIFY</div></div>
+    <div class="mini-poster mp3"><span class="mp-icon">💳</span><div class="mp-label">MASTERCARD</div></div>
+    <div class="mini-poster mp4"><span class="mp-icon">📚</span><div class="mp-label">NCT</div></div>
+    <div class="mini-poster mp5"><span class="mp-icon">🧧</span><div class="mp-label">TẾT</div></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-badge-row">
+      <span class="hd-badge">FULL HD</span>
+      <span class="new-badge">AVAILABLE NOW</span>
+      <span class="lang-badge">VI · EN</span>
+    </div>
+    <div class="hero-title">
+      <span class="sub">THE COPYWRITER</span>
+      VÕ VĂN <span class="accent">VĨ</span>
+    </div>
+    <div class="hero-rating">
+      <span class="imdb-box">PORTFOLIO</span>
+      <span class="star-score">★ 9.2</span>
+      <span style="font-size:11px;color:var(--muted);">/ 10</span>
+    </div>
+    <div class="hero-meta-row">
+      <span>📅 2021–2026</span>
+      <span>🎬 12 Projects</span>
+      <span>📍 HCMC, Vietnam</span>
+    </div>
+    <p class="hero-desc">Creative copywriter tại Happiness Saigon. Từ TVC đến IMC campaigns — từ Highlands Coffee đến Mastercard. Ban ngày viết copy, ban đêm xây fanpage comedy. Always-on, always creative.</p>
+    <div class="hero-actions">
+      <a href="#projects" class="action-btn btn-watch"><div class="play-icon"></div> Xem Portfolio</a>
+      <a href="#contact" class="action-btn btn-info">Liên Hệ Ngay</a>
+    </div>
+  </div>
+</div>
+
+<!-- GENRE FILTERS -->
+<div class="genre-row">
+  <button class="genre-tag active" onclick="filterCards('all', this)">Tất Cả</button>
+  <button class="genre-tag" onclick="filterCards('imc', this)">IMC Campaign</button>
+  <button class="genre-tag" onclick="filterCards('social', this)">Social Media</button>
+  <button class="genre-tag" onclick="filterCards('tvc', this)">TVC / Script</button>
+  <button class="genre-tag" onclick="filterCards('tet', this)">Tết</button>
+  <button class="genre-tag" onclick="filterCards('fb', this)">F&B</button>
+  <button class="genre-tag" onclick="filterCards('freelance', this)">Freelance</button>
+  <button class="genre-tag" onclick="filterCards('nonprofit', this)">Non-Profit</button>
+</div>
+
+<!-- PROJECTS -->
+<div class="section" id="projects">
+  <div class="section-header">
+    <span class="section-title">Phim Nổi Bật — Featured Work</span>
+    <a href="https://www.behance.net/vovanvi" target="_blank" class="see-all">Xem trên Behance ›</a>
+  </div>
+</div>
+
+<div class="movie-grid" id="movie-grid">
+
+  <a href="https://www.behance.net/gallery/192527573/Highlands-Coffee-Rebranding-Campaign" target="_blank" class="mcard" data-tags="imc fb">
+    <div class="mcard-poster" style="background:linear-gradient(160deg,#1a0800,#4a1500,#8a3000);">
+      <span class="mcard-emoji">☕</span>
+      <div class="poster-gradient"></div>
+    </div>
+    <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">EP.01</span></div>
+    <div class="mcard-rating">★ 9.5</div>
+    <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
+    <div class="mcard-info">
+      <div class="mcard-title">Highlands Rebranding</div>
+      <div class="mcard-sub">Happiness Saigon · 2024</div>
+      <div class="mcard-tags"><span class="mcard-tag tag-r">IMC</span><span class="mcard-tag tag-y">Rebranding</span></div>
+    </div>
+  </a>
+
+  <a href="https://www.behance.net/gallery/205543063/MASTERCARD-DRAGON-CURSE-RITUAL" target="_blank" class="mcard" data-tags="imc">
+    <div class="mcard-poster" style="background:linear-gradient(160deg,#0a0f20,#101a40,#1a2a60);">
+      <span class="mcard-emoji">💳</span>
+      <div class="poster-gradient"></div>
+    </div>
+    <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">EP.02</span></div>
+    <div class="mcard-rating">★ 9.3</div>
+    <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
+    <div class="mcard-info">
+      <div class="mcard-title">Mastercard Dragon Curse</div>
+      <div class="mcard-sub">Happiness Saigon · 2024</div>
+      <div class="mcard-tags"><span class="mcard-tag tag-r">IMC</span><span class="mcard-tag tag-p">Mythology</span></div>
+    </div>
+  </a>
+
+  <a href="https://www.behance.net/gallery/127416207/Spotify-Social-Always-on-Content" target="_blank" class="mcard" data-tags="social">
+    <div class="mcard-poster" style="background:linear-gradient(160deg,#0a200a,#103510,#1a5518);">
+      <span class="mcard-emoji">🎵</span>
+      <div class="poster-gradient"></div>
+    </div>
+    <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">EP.03</span></div>
+    <div class="mcard-rating">★ 8.9</div>
+    <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
+    <div class="mcard-info">
+      <div class="mcard-title">Spotify Always-On Social</div>
+      <div class="mcard-sub">The Friday · 2022</div>
+      <div class="mcard-tags"><span class="mcard-tag tag-g">Social</span><span class="mcard-tag tag-b">Music</span></div>
+    </div>
+  </a>
+
+  <a href="https://www.behance.net/gallery/135864145/HIGHLANDS-COFFEE-TET-CAMPAIGN-2022" target="_blank" class="mcard" data-tags="imc tet fb">
+    <div class="mcard-poster" style="background:linear-gradient(160deg,#200a00,#401500,#701f00);">
+      <span class="mcard-emoji">☕</span>
+      <div class="poster-gradient"></div>
+    </div>
+    <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">EP.04</span></div>
+    <div class="mcard-rating">★ 9.1</div>
+    <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
+    <div class="mcard-info">
+      <div class="mcard-title">Highlands Coffee Tết 2022</div>
+      <div class="mcard-sub">The Friday · 2022</div>
+      <div class="mcard-tags"><span class="mcard-tag tag-r">IMC</span><span class="mcard-tag tag-y">Tết</span></div>
+    </div>
+  </a>
+
+  <a href="https://www.facebook.com/" target="_blank" class="mcard" data-tags="social freelance">
+    <div class="mcard-poster" style="background:linear-gradient(160deg,#100a20,#201535,#3a1f55);">
+      <span class="mcard-emoji">😂</span>
+      <div class="poster-gradient"></div>
+    </div>
+    <div class="mcard-badge"><span class="badge-hot">HOT</span><span class="badge-ep">EP.05</span></div>
+    <div class="mcard-rating">★ 9.8</div>
+    <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
+    <div class="mcard-info">
+      <div class="mcard-title">Laughs Per Minute</div>
+      <div class="mcard-sub">Fanpage · Social Media</div>
+      <div class="mcard-tags"><span class="mcard-tag tag-g">Social</span><span class="mcard-tag tag-p">Comedy</span></div>
+    </div>
+  </a>
+
+  <a href="https://www.behance.net/gallery/205844851/SOCIAL-CONTENT-NCT-ENGLISH-CENTER" target="_blank" class="mcard" data-tags="social freelance">
+    <div class="mcard-poster" style="background:linear-gradient(160deg,#051520,#0a2535,#103a50);">
+      <span class="mcard-emoji">📚</span>
+      <div class="poster-gradient"></div>
+    </div>
+    <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">EP.06</span></div>
+    <div class="mcard-rating">★ 8.7</div>
+    <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
+    <div class="mcard-info">
+      <div class="mcard-title">NCT English Center</div>
+      <div class="mcard-sub">Freelance · 2025</div>
+      <div class="mcard-tags"><span class="mcard-tag tag-g">Social</span><span class="mcard-tag tag-b">Education</span></div>
+    </div>
+  </a>
+
+  <a href="https://www.behance.net/gallery/205472965/TET-CAMPAIGN-XUI-HAY-VUI" target="_blank" class="mcard" data-tags="imc tet">
+    <div class="mcard-poster" style="background:linear-gradient(160deg,#1a1200,#352200,#553500);">
+      <span class="mcard-emoji">🧧</span>
+      <div class="poster-gradient"></div>
+    </div>
+    <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">EP.07</span></div>
+    <div class="mcard-rating">★ 9.0</div>
+    <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
+    <div class="mcard-info">
+      <div class="mcard-title">Tết — Xui Hay Vui</div>
+      <div class="mcard-sub">Happiness Saigon · 2025</div>
+      <div class="mcard-tags"><span class="mcard-tag tag-r">IMC</span><span class="mcard-tag tag-y">Tết</span></div>
+    </div>
+  </a>
+
+  <a href="https://www.behance.net/gallery/206291545/SOCIAL-MEDIA-MANAGEMENT-VIETKIEUCOM" target="_blank" class="mcard" data-tags="social freelance">
+    <div class="mcard-poster" style="background:linear-gradient(160deg,#081520,#102030,#183045);">
+      <span class="mcard-emoji">🌏</span>
+      <div class="poster-gradient"></div>
+    </div>
+    <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">EP.08</span></div>
+    <div class="mcard-rating">★ 8.5</div>
+    <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
+    <div class="mcard-info">
+      <div class="mcard-title">Vietkieu.com Social</div>
+      <div class="mcard-sub">Freelance · 2025</div>
+      <div class="mcard-tags"><span class="mcard-tag tag-g">Social</span><span class="mcard-tag tag-b">Diaspora</span></div>
+    </div>
+  </a>
+
+  <a href="https://www.behance.net/gallery/205508993/CA-R-COFFEE-SHOP-NEW-PRODUCT-LAUNCH-CAMPAIGN" target="_blank" class="mcard" data-tags="social freelance fb">
+    <div class="mcard-poster" style="background:linear-gradient(160deg,#0a180a,#153025,#1a4030);">
+      <span class="mcard-emoji">☕</span>
+      <div class="poster-gradient"></div>
+    </div>
+    <div class="mcard-badge"><span class="badge-new">NEW</span><span class="badge-ep">EP.09</span></div>
+    <div class="mcard-rating">★ 8.8</div>
+    <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
+    <div class="mcard-info">
+      <div class="mcard-title">Cà Rề Coffee Launch</div>
+      <div class="mcard-sub">Freelance · 2025</div>
+      <div class="mcard-tags"><span class="mcard-tag tag-g">Social</span><span class="mcard-tag tag-r">F&B</span></div>
+    </div>
+  </a>
+
+  <a href="https://www.behance.net/gallery/132727275/ANIMATED-TUTORIAL-VIDEO" target="_blank" class="mcard" data-tags="tvc">
+    <div class="mcard-poster" style="background:linear-gradient(160deg,#151020,#251828,#352035);">
+      <span class="mcard-emoji">🎬</span>
+      <div class="poster-gradient"></div>
+    </div>
+    <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">EP.10</span></div>
+    <div class="mcard-rating">★ 8.6</div>
+    <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
+    <div class="mcard-info">
+      <div class="mcard-title">Animated Tutorial Script</div>
+      <div class="mcard-sub">The Friday · 2022</div>
+      <div class="mcard-tags"><span class="mcard-tag tag-p">TVC</span><span class="mcard-tag tag-b">Script</span></div>
+    </div>
+  </a>
+
+  <a href="https://www.behance.net/gallery/205501979/NON-PROFIT-PROJECT-WALL-OF-TALISMANS" target="_blank" class="mcard" data-tags="nonprofit">
+    <div class="mcard-poster" style="background:linear-gradient(160deg,#001818,#003030,#004848);">
+      <span class="mcard-emoji">🪬</span>
+      <div class="poster-gradient"></div>
+    </div>
+    <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">EP.11</span></div>
+    <div class="mcard-rating">★ 8.4</div>
+    <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
+    <div class="mcard-info">
+      <div class="mcard-title">Wall of Talismans</div>
+      <div class="mcard-sub">Non-Profit · 2025</div>
+      <div class="mcard-tags"><span class="mcard-tag tag-b">Non-Profit</span><span class="mcard-tag tag-g">Culture</span></div>
+    </div>
+  </a>
+
+  <a href="https://www.behance.net/gallery/127556303/PADMASK" target="_blank" class="mcard" data-tags="imc">
+    <div class="mcard-poster" style="background:linear-gradient(160deg,#0a0010,#18002a,#280040);">
+      <span class="mcard-emoji">😷</span>
+      <div class="poster-gradient"></div>
+    </div>
+    <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">EP.12</span></div>
+    <div class="mcard-rating">★ 8.3</div>
+    <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
+    <div class="mcard-info">
+      <div class="mcard-title">PADMASK Campaign</div>
+      <div class="mcard-sub">The Friday · 2022</div>
+      <div class="mcard-tags"><span class="mcard-tag tag-p">Brand</span><span class="mcard-tag tag-r">Health</span></div>
+    </div>
+  </a>
+
+</div>
+
+<!-- SPECIALS -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-title">Đặc Biệt — Special Features</span>
+  </div>
+</div>
+<div class="special-row">
+  <div class="special-card">
+    <div class="sc-inner sc-bg-a">
+      <div class="sc-eyebrow">⭐ Social Media Project</div>
+      <div class="sc-title">LAUGHS PER<br>MINUTE</div>
+      <p class="sc-desc">Comedy fanpage được xây từ con số 0. Content strategy, copywriting, và community management — chứng minh rằng humor là hình thức marketing cao nhất.</p>
+      <div class="sc-action">► Comedy · Social · Brand Building</div>
+    </div>
+  </div>
+  <div class="special-card">
+    <div class="sc-inner sc-bg-b">
+      <div class="sc-eyebrow">📋 Work Experience</div>
+      <div class="sc-title">THE COPYWRITER<br>JOURNEY</div>
+      <p class="sc-desc">Junior Copywriter tại The Friday → Creative Copywriter tại Happiness Saigon. 3–5 năm viết cho global & local brands. Hiện nhận freelance social media & brand building.</p>
+      <div class="sc-action">► Available for freelance — HCMC & Remote</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT / CONTACT -->
+<div class="section" id="contact">
+  <div class="section-header">
+    <span class="section-title">Thông Tin — About & Contact</span>
+  </div>
+</div>
+<div class="about-bar">
+  <div class="about-item">
+    <div class="about-label">Name</div>
+    <div class="about-value">Võ Văn Vĩ</div>
+  </div>
+  <div class="about-item">
+    <div class="about-label">Role</div>
+    <div class="about-value">Creative Copywriter<br><span style="font-size:13px;color:var(--muted);">Happiness Saigon</span></div>
+  </div>
+  <div class="about-item">
+    <div class="about-label">Location</div>
+    <div class="about-value">Ho Chi Minh City<br><span style="font-size:13px;color:var(--muted);">Vietnam 🇻🇳</span></div>
+  </div>
+  <div class="about-item">
+    <div class="about-label">Email</div>
+    <div class="about-value"><a href="mailto:your@email.com">your@email.com</a></div>
+  </div>
+  <div class="about-item">
+    <div class="about-label">Behance</div>
+    <div class="about-value"><a href="https://www.behance.net/vovanvi" target="_blank">behance.net/vovanvi</a></div>
+  </div>
+  <div class="about-item">
+    <div class="about-label">Available For</div>
+    <div class="about-value" style="color:var(--gold);">Freelance & Full-time</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="rp-footer">
+  <div>
+    <div class="footer-brand">VÕ VĂN <span>VĨ</span> · Creative Copywriter</div>
+    <div class="footer-sub">Ho Chi Minh City · behance.net/vovanvi · Available for Freelance</div>
+  </div>
+  <div class="footer-links">
+    <a href="https://www.behance.net/vovanvi" target="_blank" class="flink">Behance ↗</a>
+    <a href="https://www.linkedin.com/in/vovanvi" target="_blank" class="flink">LinkedIn ↗</a>
+    <a href="mailto:your@email.com" class="flink">Email ↗</a>
+  </div>
+  <div class="footer-copy">© 2026 Võ Văn Vĩ Portfolio · All rights reserved · HCMC, Vietnam</div>
+</footer>
+
+<script>
+function filterCards(tag, btn) {
+  document.querySelectorAll('.genre-tag').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const cards = document.querySelectorAll('#movie-grid .mcard');
+  cards.forEach(card => {
+    if (tag === 'all') {
+      card.style.display = '';
+    } else {
+      const tags = card.getAttribute('data-tags') || '';
+      card.style.display = tags.includes(tag) ? '' : 'none';
+    }
+  });
+}
+
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({behavior:'smooth'}); }
+  });
+});
+</script>
+
+</body>
+</html>
