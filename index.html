@@ -3,76 +3,67 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> Rổ Work — Võ Văn Vĩ </title>
-<meta name="description" content="Creative Copywriter HCMC. TVC, IMC Campaigns, Social Media. Highlands Coffee, Mastercard, Spotify và nhiều hơn nữa.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>Võ Văn Vĩ — Creative Copywriter Portfolio</title>
+<meta name="description" content="Creative Copywriter tại HCMC. TVC, IMC Campaigns, Social Media.">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-:root{
-  --bg:#0d0d0d;
-  --surface:#161616;
-  --card:#1a1a1a;
-  --border:#2a2a2a;
-  --red:#e8220a;
-  --orange:#ff6b00;
-  --gold:#f5c518;
-  --text:#e0e0e0;
-  --muted:#888;
-  --white:#fff;
-}
+:root{--bg:#0d0d0d;--surface:#161616;--card:#1a1a1a;--border:#2a2a2a;--red:#e8220a;--orange:#ff6b00;--gold:#f5c518;--text:#e0e0e0;--muted:#888;--white:#fff;}
 html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--text);font-family:'Roboto',sans-serif;min-height:100vh;width:100%;overflow-x:hidden;}
+body{background:var(--bg);color:var(--text);font-family:'Roboto',sans-serif;min-height:100vh;overflow-x:hidden;}
+
+/* PAGE SYSTEM */
+.page{display:none;animation:fadeIn 0.35s ease;}
+.page.active{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
 
 /* TOPBAR */
-.topbar{background:#111;border-bottom:2px solid var(--red);padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100;}
-.logo{font-family:'Oswald',sans-serif;font-size:24px;font-weight:700;letter-spacing:2px;text-decoration:none;}
+.topbar{background:#111;border-bottom:2px solid var(--red);padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:200;}
+.logo{font-family:'Oswald',sans-serif;font-size:24px;font-weight:700;letter-spacing:2px;cursor:pointer;text-decoration:none;}
 .logo .ro{color:var(--white);}
 .logo .phim{color:var(--red);}
 .logo .num{color:var(--orange);}
+.logo .basket{color:var(--white);}
+.logo .work{color:var(--red);}
 .nav-links{display:flex;gap:4px;}
-.nav-link{font-size:13px;color:var(--muted);padding:7px 14px;border-radius:3px;cursor:pointer;transition:all 0.15s;text-decoration:none;font-family:'Roboto',sans-serif;}
-.nav-link:hover,.nav-link.active{color:var(--white);background:rgba(232,34,10,0.15);}
-.nav-link.active{color:var(--red);}
-.hire-btn{background:var(--red);color:#fff;border:none;padding:9px 20px;border-radius:3px;font-size:13px;font-weight:500;cursor:pointer;font-family:'Roboto',sans-serif;letter-spacing:0.03em;transition:background 0.15s;text-decoration:none;display:inline-block;}
+.nav-link{font-size:13px;color:var(--muted);padding:7px 14px;border-radius:3px;cursor:pointer;transition:all 0.15s;font-family:'Roboto',sans-serif;border:none;background:none;}
+.nav-link:hover{color:var(--white);background:rgba(232,34,10,0.15);}
+.hire-btn{background:var(--red);color:#fff;border:none;padding:9px 20px;border-radius:3px;font-size:13px;font-weight:500;cursor:pointer;font-family:'Roboto',sans-serif;transition:background 0.15s;}
 .hire-btn:hover{background:#c01a05;}
 
-/* HERO */
+/* ===================== HOME PAGE ===================== */
 .hero{position:relative;height:460px;overflow:hidden;background:linear-gradient(135deg,#0a0005 0%,#15020a 40%,#050a15 100%);}
-.hero-film-strip{position:absolute;top:0;left:0;right:0;height:4px;background:repeating-linear-gradient(90deg,var(--red) 0px,var(--red) 20px,transparent 20px,transparent 28px);}
+.hero-film-strip{position:absolute;top:0;left:0;right:0;height:4px;background:repeating-linear-gradient(90deg,var(--red) 0,var(--red) 20px,transparent 20px,transparent 28px);}
 .hero-vignette{position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 50% 50%,transparent 30%,rgba(0,0,0,0.65) 100%);}
 .hero-side-fade{position:absolute;inset:0;background:linear-gradient(to right,rgba(13,13,13,0.97) 0%,rgba(13,13,13,0.25) 42%,rgba(13,13,13,0.25) 58%,rgba(13,13,13,0.97) 100%);}
 .hero-bottom-fade{position:absolute;bottom:0;left:0;right:0;height:130px;background:linear-gradient(to top,var(--bg) 0%,transparent 100%);}
-
 .hero-posters{position:absolute;right:0;top:0;bottom:0;width:55%;display:flex;gap:10px;padding:24px 28px 24px 0;align-items:center;justify-content:flex-end;overflow:hidden;}
-.mini-poster{border-radius:6px;overflow:hidden;flex-shrink:0;position:relative;display:flex;align-items:flex-end;justify-content:center;}
+.mini-poster{border-radius:6px;overflow:hidden;flex-shrink:0;position:relative;display:flex;align-items:center;justify-content:center;}
 .mp1{width:88px;height:132px;background:linear-gradient(160deg,#1a0800,#4a1500);opacity:0.5;}
 .mp2{width:108px;height:162px;background:linear-gradient(160deg,#0a1020,#152040);opacity:0.7;}
-.mp3{width:132px;height:198px;background:linear-gradient(160deg,#1a0a2a,#350a50);z-index:2;}
+.mp3{width:132px;height:198px;background:linear-gradient(160deg,#1a0a2a,#350a50);}
 .mp4{width:108px;height:162px;background:linear-gradient(160deg,#0a2a0a,#0a4510);opacity:0.7;}
 .mp5{width:88px;height:132px;background:linear-gradient(160deg,#2a1a0a,#503010);opacity:0.5;}
-.mp-icon{font-size:28px;position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);}
-.mp-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,0.9),transparent);padding:8px 6px 6px;font-size:9px;color:#ccc;font-family:'Oswald',sans-serif;letter-spacing:0.06em;text-align:center;}
-
+.mp-icon{font-size:28px;}
+.mp-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,0.9),transparent);padding:6px 6px 5px;font-size:9px;color:#ccc;font-family:'Oswald',sans-serif;letter-spacing:0.06em;text-align:center;}
 .hero-content{position:absolute;left:28px;top:50%;transform:translateY(-50%);max-width:380px;z-index:3;}
 .hero-badge-row{display:flex;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
 .hd-badge{background:var(--red);color:#fff;font-size:9px;font-weight:700;padding:3px 7px;border-radius:2px;letter-spacing:0.08em;}
-.new-badge{background:var(--orange);color:#fff;font-size:9px;font-weight:700;padding:3px 7px;border-radius:2px;letter-spacing:0.08em;}
-.lang-badge{border:1px solid var(--muted);color:var(--muted);font-size:9px;padding:2px 7px;border-radius:2px;letter-spacing:0.05em;}
-.hero-title{font-family:'Oswald',sans-serif;font-size:clamp(38px,6vw,64px);font-weight:700;color:var(--white);line-height:0.92;letter-spacing:2px;margin-bottom:8px;text-shadow:0 2px 24px rgba(0,0,0,0.9);}
+.new-badge{background:var(--orange);color:#fff;font-size:9px;font-weight:700;padding:3px 7px;border-radius:2px;}
+.lang-badge{border:1px solid var(--muted);color:var(--muted);font-size:9px;padding:2px 7px;border-radius:2px;}
+.hero-title{font-family:'Oswald',sans-serif;font-size:clamp(36px,5.5vw,62px);font-weight:700;color:var(--white);line-height:0.92;letter-spacing:2px;margin-bottom:8px;text-shadow:0 2px 24px rgba(0,0,0,0.9);}
 .hero-title .accent{color:var(--red);}
 .hero-title .sub{font-size:0.42em;color:var(--muted);display:block;letter-spacing:5px;font-weight:400;margin-bottom:6px;}
 .hero-rating{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
-.imdb-box{background:var(--gold);color:#000;font-size:10px;font-weight:700;padding:3px 8px;border-radius:2px;font-family:'Oswald',sans-serif;letter-spacing:0.05em;}
+.imdb-box{background:var(--gold);color:#000;font-size:10px;font-weight:700;padding:3px 8px;border-radius:2px;font-family:'Oswald',sans-serif;}
 .star-score{color:var(--gold);font-size:14px;font-weight:600;}
 .hero-meta-row{font-size:12px;color:var(--muted);margin-bottom:12px;display:flex;gap:14px;flex-wrap:wrap;}
 .hero-desc{font-size:13px;color:rgba(200,200,200,0.8);line-height:1.65;margin-bottom:20px;}
 .hero-actions{display:flex;gap:10px;flex-wrap:wrap;}
-.action-btn{display:inline-flex;align-items:center;gap:7px;padding:10px 22px;border-radius:3px;font-size:13px;font-weight:500;cursor:pointer;border:none;font-family:'Roboto',sans-serif;transition:all 0.15s;text-decoration:none;}
+.action-btn{display:inline-flex;align-items:center;gap:7px;padding:10px 22px;border-radius:3px;font-size:13px;font-weight:500;cursor:pointer;border:none;font-family:'Roboto',sans-serif;transition:all 0.15s;}
 .btn-watch{background:var(--red);color:#fff;}
 .btn-watch:hover{background:#c01a05;}
-.btn-info{background:rgba(255,255,255,0.12);color:var(--white);border:1px solid rgba(255,255,255,0.2);}
+.btn-info{background:rgba(255,255,255,0.12);color:var(--white);}
 .btn-info:hover{background:rgba(255,255,255,0.2);}
 .play-icon{width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:9px solid currentColor;}
 
@@ -82,19 +73,15 @@ body{background:var(--bg);color:var(--text);font-family:'Roboto',sans-serif;min-
 .genre-tag:hover{border-color:var(--red);color:var(--text);}
 .genre-tag.active{background:var(--red);color:#fff;border-color:var(--red);}
 
-/* SECTION */
+/* SECTION HEADER */
 .section{padding:24px 28px 8px;}
 .section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
 .section-title{font-family:'Oswald',sans-serif;font-size:18px;font-weight:600;color:var(--white);display:flex;align-items:center;gap:10px;letter-spacing:0.5px;}
 .section-title::before{content:'';width:4px;height:22px;background:var(--red);border-radius:2px;display:inline-block;flex-shrink:0;}
-.see-all{font-size:12px;color:var(--red);cursor:pointer;text-decoration:none;}
-.see-all:hover{color:var(--orange);}
 
 /* MOVIE GRID */
-.movie-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;padding:0 28px 24px;}
-
-/* MOVIE CARD */
-.mcard{border-radius:6px;overflow:hidden;position:relative;cursor:pointer;background:var(--card);border:1px solid var(--border);transition:transform 0.22s,border-color 0.22s,box-shadow 0.22s;}
+.movie-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:14px;padding:0 28px 24px;}
+.mcard{border-radius:6px;overflow:hidden;cursor:pointer;background:var(--card);border:1px solid var(--border);transition:transform 0.22s,border-color 0.22s,box-shadow 0.22s;}
 .mcard:hover{transform:translateY(-5px) scale(1.02);border-color:var(--red);box-shadow:0 12px 40px rgba(232,34,10,0.18);}
 .mcard-poster{width:100%;aspect-ratio:2/3;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;}
 .mcard-emoji{font-size:40px;position:relative;z-index:1;}
@@ -104,12 +91,12 @@ body{background:var(--bg);color:var(--text);font-family:'Roboto',sans-serif;min-
 .overlay-play{width:46px;height:46px;border-radius:50%;border:2px solid #fff;display:flex;align-items:center;justify-content:center;background:rgba(232,34,10,0.85);}
 .overlay-tri{width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;border-left:14px solid #fff;margin-left:3px;}
 .mcard-badge{position:absolute;top:8px;left:8px;display:flex;flex-direction:column;gap:3px;z-index:3;}
-.badge-hd{background:var(--red);color:#fff;font-size:8px;font-weight:700;padding:2px 5px;border-radius:2px;letter-spacing:0.05em;display:inline-block;}
+.badge-hd{background:var(--red);color:#fff;font-size:8px;font-weight:700;padding:2px 5px;border-radius:2px;display:inline-block;}
 .badge-ep{background:rgba(0,0,0,0.8);color:var(--orange);font-size:8px;font-weight:600;padding:2px 5px;border-radius:2px;border:1px solid var(--orange);display:inline-block;}
-.badge-new{background:var(--orange);color:#fff;font-size:8px;font-weight:700;padding:2px 5px;border-radius:2px;letter-spacing:0.05em;display:inline-block;}
-.badge-hot{background:#ff0050;color:#fff;font-size:8px;font-weight:700;padding:2px 5px;border-radius:2px;letter-spacing:0.05em;display:inline-block;animation:hotpulse 1.8s ease-in-out infinite;}
+.badge-hot{background:#ff0050;color:#fff;font-size:8px;font-weight:700;padding:2px 5px;border-radius:2px;display:inline-block;animation:hotpulse 1.8s ease-in-out infinite;}
+.badge-new{background:var(--orange);color:#fff;font-size:8px;font-weight:700;padding:2px 5px;border-radius:2px;display:inline-block;}
 @keyframes hotpulse{0%,100%{opacity:1;}50%{opacity:0.6;}}
-.mcard-rating{position:absolute;top:8px;right:8px;background:rgba(0,0,0,0.85);color:var(--gold);font-size:10px;font-weight:600;padding:2px 7px;border-radius:3px;display:flex;align-items:center;gap:3px;z-index:3;}
+.mcard-rating{position:absolute;top:8px;right:8px;background:rgba(0,0,0,0.85);color:var(--gold);font-size:10px;font-weight:600;padding:2px 7px;border-radius:3px;z-index:3;}
 .mcard-info{padding:10px 10px 12px;}
 .mcard-title{font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;color:var(--white);margin-bottom:4px;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .mcard-sub{font-size:10px;color:var(--muted);margin-bottom:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
@@ -121,11 +108,11 @@ body{background:var(--bg);color:var(--text);font-family:'Roboto',sans-serif;min-
 .tag-y{background:rgba(245,197,24,0.14);color:#f5c518;border:1px solid rgba(245,197,24,0.25);}
 .tag-p{background:rgba(160,60,220,0.14);color:#c080f8;border:1px solid rgba(160,60,220,0.25);}
 
-/* SPECIAL ROW */
+/* SPECIALS */
 .special-row{padding:0 28px 28px;display:grid;grid-template-columns:1fr 1fr;gap:14px;}
 .special-card{border-radius:6px;overflow:hidden;border:1px solid var(--border);cursor:pointer;transition:transform 0.2s,border-color 0.2s,box-shadow 0.2s;}
 .special-card:hover{transform:translateY(-3px);border-color:var(--orange);box-shadow:0 8px 32px rgba(255,107,0,0.15);}
-.sc-inner{padding:22px;position:relative;min-height:130px;}
+.sc-inner{padding:22px;min-height:130px;}
 .sc-bg-a{background:linear-gradient(135deg,#1a0800,#330f00);}
 .sc-bg-b{background:linear-gradient(135deg,#00081a,#001a33);}
 .sc-eyebrow{font-size:10px;letter-spacing:0.18em;color:var(--orange);text-transform:uppercase;margin-bottom:8px;font-weight:600;}
@@ -133,417 +120,771 @@ body{background:var(--bg);color:var(--text);font-family:'Roboto',sans-serif;min-
 .sc-desc{font-size:12px;color:var(--muted);line-height:1.65;}
 .sc-action{margin-top:12px;font-size:12px;color:var(--red);font-weight:500;}
 
-/* ABOUT SECTION */
-.about-bar{margin:0 28px 28px;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:24px 28px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;}
-.about-item{}
+/* ABOUT BAR */
+.about-bar{margin:0 28px 28px;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:24px 28px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
 .about-label{font-size:10px;letter-spacing:0.12em;color:var(--muted);text-transform:uppercase;margin-bottom:6px;}
-.about-value{font-family:'Oswald',sans-serif;font-size:16px;color:var(--white);letter-spacing:0.5px;line-height:1.35;}
+.about-value{font-family:'Oswald',sans-serif;font-size:15px;color:var(--white);}
 .about-value a{color:var(--red);text-decoration:none;}
 .about-value a:hover{color:var(--orange);}
 
 /* FOOTER */
 .rp-footer{background:#0a0a0a;border-top:1px solid var(--border);padding:22px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
-.footer-brand{font-family:'Oswald',sans-serif;font-size:16px;color:var(--white);letter-spacing:1px;}
+.footer-brand{font-family:'Oswald',sans-serif;font-size:16px;color:var(--white);}
 .footer-brand span{color:var(--red);}
 .footer-sub{font-size:11px;color:#555;margin-top:4px;}
 .footer-links{display:flex;gap:8px;flex-wrap:wrap;}
 .flink{font-size:12px;color:var(--muted);padding:6px 14px;border:1px solid var(--border);border-radius:3px;cursor:pointer;transition:all 0.15s;text-decoration:none;display:inline-block;}
 .flink:hover{color:var(--white);border-color:var(--red);background:rgba(232,34,10,0.1);}
 .footer-copy{font-size:10px;color:#333;width:100%;margin-top:4px;}
+.cluster-desc{padding:0 28px 16px;font-size:12px;color:var(--muted);font-style:italic;letter-spacing:0.03em;}
 
-/* ANIMATIONS */
-@keyframes fadeInUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
-.hero-content{animation:fadeInUp 0.6s ease both;}
-.movie-grid .mcard{animation:fadeInUp 0.4s ease both;}
-.mcard:nth-child(1){animation-delay:0.05s;}
-.mcard:nth-child(2){animation-delay:0.10s;}
-.mcard:nth-child(3){animation-delay:0.15s;}
-.mcard:nth-child(4){animation-delay:0.20s;}
-.mcard:nth-child(5){animation-delay:0.25s;}
-.mcard:nth-child(6){animation-delay:0.30s;}
-.mcard:nth-child(7){animation-delay:0.35s;}
-.mcard:nth-child(8){animation-delay:0.40s;}
-.mcard:nth-child(9){animation-delay:0.45s;}
-.mcard:nth-child(10){animation-delay:0.50s;}
-.mcard:nth-child(11){animation-delay:0.55s;}
-.mcard:nth-child(12){animation-delay:0.60s;}
+/* ===================== PROJECT PAGE ===================== */
+.proj-hero{position:relative;height:380px;overflow:hidden;display:flex;align-items:flex-end;}
+.proj-hero-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:120px;filter:blur(2px);opacity:0.25;}
+.proj-hero-overlay{position:absolute;inset:0;}
+.proj-hero-bottom{position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(to top,var(--bg) 0%,transparent 100%);}
+.proj-hero-content{position:relative;z-index:2;padding:0 28px 32px;width:100%;}
+.proj-breadcrumb{font-size:12px;color:var(--muted);margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.proj-breadcrumb button{background:none;border:none;color:var(--red);cursor:pointer;font-size:12px;font-family:'Roboto',sans-serif;padding:0;}
+.proj-breadcrumb button:hover{color:var(--orange);}
+.proj-badge-row{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;}
+.proj-title{font-family:'Oswald',sans-serif;font-size:clamp(28px,5vw,52px);font-weight:700;color:var(--white);letter-spacing:2px;line-height:1;margin-bottom:8px;}
+.proj-meta-row{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--muted);}
+.proj-meta-row span{display:flex;align-items:center;gap:5px;}
+
+/* PROJ BODY */
+.proj-body{padding:28px 28px 0;display:grid;grid-template-columns:1fr 320px;gap:32px;}
+.proj-main{}
+.proj-section-label{font-size:10px;letter-spacing:0.14em;color:var(--muted);text-transform:uppercase;margin-bottom:10px;font-weight:600;}
+.proj-description{font-size:14px;color:var(--text);line-height:1.75;margin-bottom:28px;}
+.proj-challenge{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--red);border-radius:4px;padding:18px 20px;margin-bottom:28px;}
+.proj-challenge p{font-size:13px;color:var(--text);line-height:1.7;font-style:italic;}
+.proj-deliverables{display:flex;flex-direction:column;gap:10px;margin-bottom:28px;}
+.proj-del-item{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--text);line-height:1.5;}
+.proj-del-item::before{content:'►';color:var(--red);font-size:10px;margin-top:3px;flex-shrink:0;}
+
+/* PROJ SIDEBAR */
+.proj-sidebar{}
+.proj-info-card{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:20px;margin-bottom:16px;}
+.proj-info-row{display:flex;flex-direction:column;gap:14px;}
+.proj-info-item{}
+.pii-label{font-size:10px;letter-spacing:0.12em;color:var(--muted);text-transform:uppercase;margin-bottom:4px;}
+.pii-value{font-size:13px;color:var(--text);font-weight:500;}
+.pii-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px;}
+.proj-behance-btn{display:block;width:100%;padding:12px;background:var(--red);color:#fff;text-align:center;border-radius:4px;font-size:13px;font-weight:600;cursor:pointer;border:none;font-family:'Roboto',sans-serif;transition:background 0.15s;text-decoration:none;margin-bottom:10px;}
+.proj-behance-btn:hover{background:#c01a05;}
+.proj-back-btn{display:block;width:100%;padding:11px;background:var(--surface);color:var(--text);text-align:center;border-radius:4px;font-size:13px;cursor:pointer;border:1px solid var(--border);font-family:'Roboto',sans-serif;transition:all 0.15s;}
+.proj-back-btn:hover{border-color:var(--red);color:var(--white);}
+
+/* MORE PROJECTS */
+.more-projects{padding:28px 28px 40px;}
+.more-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;margin-top:14px;}
 
 /* RESPONSIVE */
-@media(max-width:680px){
+@media(max-width:700px){
   .nav-links{display:none;}
-  .hero{height:auto;padding-bottom:40px;}
   .hero-posters{display:none;}
   .hero-side-fade{display:none;}
-  .hero-content{position:relative;left:0;top:0;transform:none;padding:28px 20px 0;}
+  .hero-content{position:relative;left:0;top:0;transform:none;padding:24px 18px 0;max-width:100%;}
+  .hero{height:auto;padding-bottom:32px;}
   .movie-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));padding:0 16px 20px;}
   .special-row{grid-template-columns:1fr;padding:0 16px 20px;}
-  .about-bar{grid-template-columns:1fr;padding:18px 20px;}
+  .about-bar{grid-template-columns:1fr;padding:18px;}
+  .proj-body{grid-template-columns:1fr;padding:20px 18px 0;}
+  .proj-sidebar{order:-1;}
+  .genre-row,.section{padding-left:18px;padding-right:18px;}
   .topbar{padding:0 16px;}
-  .section{padding:20px 16px 8px;}
-  .genre-row{padding:14px 16px;}
-  .rp-footer{padding:18px 16px;}
+  .rp-footer{padding:18px;}
 }
 </style>
 </head>
 <body>
 
-<!-- TOPBAR -->
+<!-- TOPBAR (always visible) -->
 <nav class="topbar">
-  <div style="display:flex;align-items:center;gap:24px;">
-    <a href="#" class="logo"><span class="ro">VO</span><span class="phim">VAN</span><span class="num">VI</span></a>
+  <div style="display:flex;align-items:center;gap:20px;">
+    <span class="logo" onclick="showHome()"><span class="basket">RỔ</span> <span class="work">WORK</span></span>
     <div class="nav-links">
-      <a href="#projects" class="nav-link active">Trang Chủ</a>
-      <a href="#projects" class="nav-link">IMC</a>
-      <a href="#projects" class="nav-link">Social</a>
-      <a href="#projects" class="nav-link">TVC</a>
-      <a href="#contact" class="nav-link">Liên Hệ</a>
+      <button class="nav-link" onclick="showHome()">Trang Chủ</button>
+      <button class="nav-link" onclick="filterAndShow('imc')">IMC</button>
+      <button class="nav-link" onclick="filterAndShow('social')">Social</button>
+      <button class="nav-link" onclick="filterAndShow('tvc')">TVC</button>
+      <button class="nav-link" onclick="filterAndShow('freelance')">Freelance</button>
     </div>
   </div>
-  <a href="mailto:your@email.com" class="hire-btn">► Hire Vĩ</a>
+  <button class="hire-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});showHome();">► Hire Vĩ</button>
 </nav>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-film-strip"></div>
-  <div class="hero-vignette"></div>
-  <div class="hero-side-fade"></div>
-  <div class="hero-bottom-fade"></div>
+<!-- =================== HOME PAGE =================== -->
+<div id="page-home" class="page active">
 
-  <div class="hero-posters">
-    <div class="mini-poster mp1"><span class="mp-icon">☕</span><div class="mp-label">HIGHLANDS</div></div>
-    <div class="mini-poster mp2"><span class="mp-icon">🎵</span><div class="mp-label">SPOTIFY</div></div>
-    <div class="mini-poster mp3"><span class="mp-icon">💳</span><div class="mp-label">MASTERCARD</div></div>
-    <div class="mini-poster mp4"><span class="mp-icon">📚</span><div class="mp-label">NCT</div></div>
-    <div class="mini-poster mp5"><span class="mp-icon">🧧</span><div class="mp-label">TẾT</div></div>
+  <div class="hero">
+    <div class="hero-film-strip"></div>
+    <div class="hero-vignette"></div>
+    <div class="hero-side-fade"></div>
+    <div class="hero-bottom-fade"></div>
+    <div class="hero-posters">
+      <div class="mini-poster mp1"><span class="mp-icon">☕</span><div class="mp-label">HIGHLANDS</div></div>
+      <div class="mini-poster mp2"><span class="mp-icon">🎵</span><div class="mp-label">SPOTIFY</div></div>
+      <div class="mini-poster mp3"><span class="mp-icon">💳</span><div class="mp-label">MASTERCARD</div></div>
+      <div class="mini-poster mp4"><span class="mp-icon">📚</span><div class="mp-label">NCT</div></div>
+      <div class="mini-poster mp5"><span class="mp-icon">🧧</span><div class="mp-label">TẾT</div></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge-row">
+        <span class="hd-badge">FULL HD</span>
+        <span class="new-badge">AVAILABLE NOW</span>
+        <span class="lang-badge">VI · EN</span>
+      </div>
+      <div class="hero-title">
+        <span class="sub">THE COPYWRITER</span>
+        VÕ VĂN <span class="accent">VĨ</span>
+      </div>
+      <div class="hero-rating">
+        <span class="imdb-box">PORTFOLIO</span>
+        <span class="star-score">★ 9.2</span>
+        <span style="font-size:11px;color:var(--muted);">/ 10</span>
+      </div>
+      <div class="hero-meta-row">
+        <span>📅 2021–2026</span>
+        <span>🎬 12 Projects</span>
+        <span>📍 HCMC</span>
+      </div>
+      <p class="hero-desc">Former creative copywriter at The Friday and Happiness Saigon. +4 years in the game. Experienced with storytelling on multi channels from TVC, Social Media to offline activation. Love fish when it's cooked well. Money is my enemy</p>
+      <div class="hero-actions">
+        <button class="action-btn btn-watch"><div class="play-icon"></div> Xem Portfolio</button>
+        <button class="action-btn btn-info" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Liên Hệ</button>
+      </div>
+    </div>
   </div>
 
-  <div class="hero-content">
-    <div class="hero-badge-row">
-      <span class="hd-badge">FULL HD</span>
-      <span class="new-badge">AVAILABLE NOW</span>
-      <span class="lang-badge">VI · EN</span>
-    </div>
-    <div class="hero-title">
-      <span class="sub">THE COPYWRITER</span>
-      VÕ VĂN <span class="accent">VĨ</span>
-    </div>
-    <div class="hero-rating">
-      <span class="imdb-box">PORTFOLIO</span>
-      <span class="star-score">★ 9.2</span>
-      <span style="font-size:11px;color:var(--muted);">/ 10</span>
-    </div>
-    <div class="hero-meta-row">
-      <span>📅 2021–2026</span>
-      <span>🎬 12 Projects</span>
-      <span>📍 HCMC, Vietnam</span>
-    </div>
-    <p class="hero-desc"> Former Creative Copywriter at Happiness Saigon and The Friday. +4 years in the game. Experience in crafting concepts and stories of IMC campaigns for Highlands, Carlsberg, Kotex, Chupa Chups and Skoda. I like fish when it's cooked well. </p>
-    <div class="hero-actions">
-      <a href="#projects" class="action-btn btn-watch"><div class="play-icon"></div> Xem Portfolio</a>
-      <a href="#contact" class="action-btn btn-info">Liên Hệ Ngay</a>
+  <!-- ========== CỤM 01: SELECTED WORKS ========== -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-title">01 — Selected Works</span>
+      <a href="https://www.behance.net/vovanvi" target="_blank" style="font-size:12px;color:var(--red);text-decoration:none;">Behance ›</a>
     </div>
   </div>
+  <div class="cluster-desc">Agency work. Real briefs. Real deadlines. Real results.</div>
+
+  <div class="movie-grid" id="movie-grid">
+
+    <div class="mcard" data-cluster="selected" onclick="showProject('highlands-rebrand')">
+      <div class="mcard-poster" style="background:linear-gradient(160deg,#1a0800,#4a1500,#8a3000);">
+        <img src="" id="hc-cover" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;" /><span class="mcard-emoji" id="hc-emoji">☕</span><div class="poster-gradient"></div>
+      </div>
+      <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">01</span></div>
+      <div class="mcard-rating">★ 9.5</div>
+      <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
+      <div class="mcard-info">
+        <div class="mcard-title">Highlands Coffee Rebranding</div>
+        <div class="mcard-sub">Happiness Saigon</div>
+        <div class="mcard-tags"><span class="mcard-tag tag-r">IMC</span><span class="mcard-tag tag-y">Rebranding</span></div>
+      </div>
+    </div>
+
+    <div class="mcard" data-cluster="selected" onclick="showProject('kotex')">
+      <div class="mcard-poster" style="background:linear-gradient(160deg,#200010,#400020,#700040);">
+        <span class="mcard-emoji">🌸</span><div class="poster-gradient"></div>
+      </div>
+      <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">02</span></div>
+      <div class="mcard-rating">★ 9.2</div>
+      <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
+      <div class="mcard-info">
+        <div class="mcard-title">Kotex Tết Campaign</div>
+        <div class="mcard-sub">Coming soon</div>
+        <div class="mcard-tags"><span class="mcard-tag tag-r">IMC</span><span class="mcard-tag tag-y">Tết</span></div>
+      </div>
+    </div>
+
+    <div class="mcard" data-cluster="selected" onclick="showProject('ca-re')">
+      <div class="mcard-poster" style="background:linear-gradient(160deg,#0a180a,#153025,#1a4030);">
+        <span class="mcard-emoji">☕</span><div class="poster-gradient"></div>
+      </div>
+      <div class="mcard-badge"><span class="badge-new">NEW</span><span class="badge-ep">03</span></div>
+      <div class="mcard-rating">★ 8.8</div>
+      <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
+      <div class="mcard-info">
+        <div class="mcard-title">Cà Rề Launching Campaign</div>
+        <div class="mcard-sub">Freelance · 2025</div>
+        <div class="mcard-tags"><span class="mcard-tag tag-g">Social</span><span class="mcard-tag tag-r">F&B</span></div>
+      </div>
+    </div>
+
+    <div class="mcard" data-cluster="selected" onclick="showProject('talismans')">
+      <div class="mcard-poster" style="background:linear-gradient(160deg,#001818,#003030,#004848);">
+        <span class="mcard-emoji">🪬</span><div class="poster-gradient"></div>
+      </div>
+      <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">04</span></div>
+      <div class="mcard-rating">★ 8.4</div>
+      <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
+      <div class="mcard-info">
+        <div class="mcard-title">Wall of Talismans</div>
+        <div class="mcard-sub">Non-Profit · 2025</div>
+        <div class="mcard-tags"><span class="mcard-tag tag-b">Non-Profit</span><span class="mcard-tag tag-g">Culture</span></div>
+      </div>
+    </div>
+
+    <div class="mcard" data-cluster="selected" onclick="showProject('thuan-phat')">
+      <div class="mcard-poster" style="background:linear-gradient(160deg,#1a1000,#352000,#553200);">
+        <span class="mcard-emoji">🐟</span><div class="poster-gradient"></div>
+      </div>
+      <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">05</span></div>
+      <div class="mcard-rating">★ 9.0</div>
+      <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
+      <div class="mcard-info">
+        <div class="mcard-title">Thuận Phát Fish Sauce Tết</div>
+        <div class="mcard-sub">Coming soon</div>
+        <div class="mcard-tags"><span class="mcard-tag tag-r">IMC</span><span class="mcard-tag tag-y">Tết</span></div>
+      </div>
+    </div>
+
+    <div class="mcard" data-cluster="selected" onclick="showProject('skoda')">
+      <div class="mcard-poster" style="background:linear-gradient(160deg,#001a0a,#003018,#005028);">
+        <span class="mcard-emoji">🚗</span><div class="poster-gradient"></div>
+      </div>
+      <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">06</span></div>
+      <div class="mcard-rating">★ 9.1</div>
+      <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
+      <div class="mcard-info">
+        <div class="mcard-title">Skoda VN Launching</div>
+        <div class="mcard-sub">Coming soon</div>
+        <div class="mcard-tags"><span class="mcard-tag tag-r">IMC</span><span class="mcard-tag tag-b">Auto</span></div>
+      </div>
+    </div>
+
+    <div class="mcard" data-cluster="selected" onclick="showProject('chupa-chups')">
+      <div class="mcard-poster" style="background:linear-gradient(160deg,#200a20,#401040,#601860);">
+        <span class="mcard-emoji">🍭</span><div class="poster-gradient"></div>
+      </div>
+      <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">07</span></div>
+      <div class="mcard-rating">★ 8.9</div>
+      <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
+      <div class="mcard-info">
+        <div class="mcard-title">Chupa Chups</div>
+        <div class="mcard-sub">Coming soon</div>
+        <div class="mcard-tags"><span class="mcard-tag tag-p">Brand</span><span class="mcard-tag tag-g">FMCG</span></div>
+      </div>
+    </div>
+
+    <div class="mcard" data-cluster="selected" onclick="showProject('hygiene')">
+      <div class="mcard-poster" style="background:linear-gradient(160deg,#001020,#002040,#003060);">
+        <span class="mcard-emoji">🧴</span><div class="poster-gradient"></div>
+      </div>
+      <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">08</span></div>
+      <div class="mcard-rating">★ 8.7</div>
+      <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
+      <div class="mcard-info">
+        <div class="mcard-title">Hygiene Tết Campaign</div>
+        <div class="mcard-sub">Coming soon</div>
+        <div class="mcard-tags"><span class="mcard-tag tag-r">IMC</span><span class="mcard-tag tag-y">Tết</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ========== CỤM 02: PROACTIVE IDEAS ========== -->
+  <div class="section" style="margin-top:8px;">
+    <div class="section-header">
+      <span class="section-title">02 — Proactive Ideas</span>
+    </div>
+  </div>
+  <div class="cluster-desc">Unsolicited. Uninstructed. Unfiltered. Ideas born from curiosity.</div>
+
+  <div class="movie-grid">
+
+    <div class="mcard" data-cluster="proactive" onclick="showProject('mastercard')">
+      <div class="mcard-poster" style="background:linear-gradient(160deg,#0a0f20,#101a40,#1a2a60);">
+        <span class="mcard-emoji">💳</span><div class="poster-gradient"></div>
+      </div>
+      <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">01</span></div>
+      <div class="mcard-rating">★ 9.3</div>
+      <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
+      <div class="mcard-info">
+        <div class="mcard-title">Mastercard Dragon Curse</div>
+        <div class="mcard-sub">Happiness Saigon · 2024</div>
+        <div class="mcard-tags"><span class="mcard-tag tag-r">IMC</span><span class="mcard-tag tag-p">Proactive</span></div>
+      </div>
+    </div>
+
+    <div class="mcard" data-cluster="proactive" onclick="showProject('padmask')">
+      <div class="mcard-poster" style="background:linear-gradient(160deg,#0a0010,#18002a,#280040);">
+        <span class="mcard-emoji">😷</span><div class="poster-gradient"></div>
+      </div>
+      <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">02</span></div>
+      <div class="mcard-rating">★ 8.3</div>
+      <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
+      <div class="mcard-info">
+        <div class="mcard-title">Padmask</div>
+        <div class="mcard-sub">The Friday · 2022</div>
+        <div class="mcard-tags"><span class="mcard-tag tag-p">Brand</span><span class="mcard-tag tag-r">Proactive</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ========== CỤM 03: PERSONAL PROJECTS ========== -->
+  <div class="section" style="margin-top:8px;">
+    <div class="section-header">
+      <span class="section-title">03 — Personal Projects</span>
+    </div>
+  </div>
+  <div class="cluster-desc">No briefs. No clients. Just Vĩ doing what Vĩ does.</div>
+
+  <div class="movie-grid" style="margin-bottom:32px;">
+
+    <div class="mcard" data-cluster="personal" onclick="showProject('laughs')">
+      <div class="mcard-poster" style="background:linear-gradient(160deg,#100a20,#201535,#3a1f55);">
+        <span class="mcard-emoji">😂</span><div class="poster-gradient"></div>
+      </div>
+      <div class="mcard-badge"><span class="badge-hot">HOT</span><span class="badge-ep">01</span></div>
+      <div class="mcard-rating">★ 9.8</div>
+      <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
+      <div class="mcard-info">
+        <div class="mcard-title">Laughs Per Minute</div>
+        <div class="mcard-sub">Comedy Fanpage</div>
+        <div class="mcard-tags"><span class="mcard-tag tag-g">Social</span><span class="mcard-tag tag-p">Comedy</span></div>
+      </div>
+    </div>
+
+    <div class="mcard" data-cluster="personal" onclick="showProject('nct')">
+      <div class="mcard-poster" style="background:linear-gradient(160deg,#051520,#0a2535,#103a50);">
+        <span class="mcard-emoji">📚</span><div class="poster-gradient"></div>
+      </div>
+      <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">02</span></div>
+      <div class="mcard-rating">★ 8.7</div>
+      <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
+      <div class="mcard-info">
+        <div class="mcard-title">NCT English Center</div>
+        <div class="mcard-sub">Freelance · 2025</div>
+        <div class="mcard-tags"><span class="mcard-tag tag-g">Social</span><span class="mcard-tag tag-b">Education</span></div>
+      </div>
+    </div>
+
+    <div class="mcard" data-cluster="personal" onclick="showProject('vietkieu')">
+      <div class="mcard-poster" style="background:linear-gradient(160deg,#081520,#102030,#183045);">
+        <span class="mcard-emoji">🌏</span><div class="poster-gradient"></div>
+      </div>
+      <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">03</span></div>
+      <div class="mcard-rating">★ 8.5</div>
+      <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
+      <div class="mcard-info">
+        <div class="mcard-title">Vietkieu.com</div>
+        <div class="mcard-sub">Freelance · 2025</div>
+        <div class="mcard-tags"><span class="mcard-tag tag-g">Social</span><span class="mcard-tag tag-b">Diaspora</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CONTACT -->
+  <div class="section" id="contact">
+    <div class="section-header"><span class="section-title">Thông Tin — About & Contact</span></div>
+  </div>
+  <div class="about-bar">
+    <div><div class="about-label">Name</div><div class="about-value">Võ Văn Vĩ</div></div>
+    <div><div class="about-label">Role</div><div class="about-value">Creative Copywriter<br><span style="font-size:12px;color:var(--muted)">Happiness Saigon</span></div></div>
+    <div><div class="about-label">Location</div><div class="about-value">Ho Chi Minh City 🇻🇳</div></div>
+    <div><div class="about-label">Email</div><div class="about-value"><a href="mailto:your@email.com">your@email.com</a></div></div>
+    <div><div class="about-label">Behance</div><div class="about-value"><a href="https://www.behance.net/vovanvi" target="_blank">behance.net/vovanvi</a></div></div>
+    <div><div class="about-label">Available For</div><div class="about-value" style="color:var(--gold)">Freelance & Full-time</div></div>
+  </div>
+
+  <footer class="rp-footer">
+    <div>
+      <div class="footer-brand">RỔ WORK · Võ Văn Vĩ</div>
+      <div class="footer-sub">Ho Chi Minh City · behance.net/vovanvi</div>
+    </div>
+    <div class="footer-links">
+      <a href="https://www.behance.net/vovanvi" target="_blank" class="flink">Behance ↗</a>
+      <a href="https://linkedin.com/in/vovanvi" target="_blank" class="flink">LinkedIn ↗</a>
+      <a href="mailto:your@email.com" class="flink">Email ↗</a>
+    </div>
+    <div class="footer-copy">© 2026 Võ Văn Vĩ Portfolio · HCMC, Vietnam</div>
+  </footer>
 </div>
 
-<!-- GENRE FILTERS -->
-<div class="genre-row">
-  <button class="genre-tag active" onclick="filterCards('all', this)">Tất Cả</button>
-  <button class="genre-tag" onclick="filterCards('imc', this)">IMC Campaign</button>
-  <button class="genre-tag" onclick="filterCards('social', this)">Social Media</button>
-  <button class="genre-tag" onclick="filterCards('tvc', this)">TVC / Script</button>
-  <button class="genre-tag" onclick="filterCards('tet', this)">Tết</button>
-  <button class="genre-tag" onclick="filterCards('fb', this)">F&B</button>
-  <button class="genre-tag" onclick="filterCards('freelance', this)">Freelance</button>
-  <button class="genre-tag" onclick="filterCards('nonprofit', this)">Non-Profit</button>
+<!-- =================== PROJECT PAGE =================== -->
+<div id="page-project" class="page">
+  <div id="proj-content"></div>
 </div>
-
-<!-- PROJECTS -->
-<div class="section" id="projects">
-  <div class="section-header">
-    <span class="section-title">Phim Nổi Bật — Featured Work</span>
-    <a href="https://www.behance.net/vovanvi" target="_blank" class="see-all">Xem trên Behance ›</a>
-  </div>
-</div>
-
-<div class="movie-grid" id="movie-grid">
-
-  <a href="https://www.behance.net/gallery/192527573/Highlands-Coffee-Rebranding-Campaign" target="_blank" class="mcard" data-tags="imc fb">
-    <div class="mcard-poster" style="background:linear-gradient(160deg,#1a0800,#4a1500,#8a3000);">
-      <span class="mcard-emoji">☕</span>
-      <div class="poster-gradient"></div>
-    </div>
-    <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">EP.01</span></div>
-    <div class="mcard-rating">★ 9.5</div>
-    <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
-    <div class="mcard-info">
-      <div class="mcard-title">Highlands Rebranding</div>
-      <div class="mcard-sub">Happiness Saigon · 2024</div>
-      <div class="mcard-tags"><span class="mcard-tag tag-r">IMC</span><span class="mcard-tag tag-y">Rebranding</span></div>
-    </div>
-  </a>
-
-  <a href="https://www.behance.net/gallery/205543063/MASTERCARD-DRAGON-CURSE-RITUAL" target="_blank" class="mcard" data-tags="imc">
-    <div class="mcard-poster" style="background:linear-gradient(160deg,#0a0f20,#101a40,#1a2a60);">
-      <span class="mcard-emoji">💳</span>
-      <div class="poster-gradient"></div>
-    </div>
-    <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">EP.02</span></div>
-    <div class="mcard-rating">★ 9.3</div>
-    <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
-    <div class="mcard-info">
-      <div class="mcard-title">Mastercard Dragon Curse</div>
-      <div class="mcard-sub">Happiness Saigon · 2024</div>
-      <div class="mcard-tags"><span class="mcard-tag tag-r">IMC</span><span class="mcard-tag tag-p">Mythology</span></div>
-    </div>
-  </a>
-
-  <a href="https://www.behance.net/gallery/127416207/Spotify-Social-Always-on-Content" target="_blank" class="mcard" data-tags="social">
-    <div class="mcard-poster" style="background:linear-gradient(160deg,#0a200a,#103510,#1a5518);">
-      <span class="mcard-emoji">🎵</span>
-      <div class="poster-gradient"></div>
-    </div>
-    <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">EP.03</span></div>
-    <div class="mcard-rating">★ 8.9</div>
-    <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
-    <div class="mcard-info">
-      <div class="mcard-title">Spotify Always-On Social</div>
-      <div class="mcard-sub">The Friday · 2022</div>
-      <div class="mcard-tags"><span class="mcard-tag tag-g">Social</span><span class="mcard-tag tag-b">Music</span></div>
-    </div>
-  </a>
-
-  <a href="https://www.behance.net/gallery/135864145/HIGHLANDS-COFFEE-TET-CAMPAIGN-2022" target="_blank" class="mcard" data-tags="imc tet fb">
-    <div class="mcard-poster" style="background:linear-gradient(160deg,#200a00,#401500,#701f00);">
-      <span class="mcard-emoji">☕</span>
-      <div class="poster-gradient"></div>
-    </div>
-    <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">EP.04</span></div>
-    <div class="mcard-rating">★ 9.1</div>
-    <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
-    <div class="mcard-info">
-      <div class="mcard-title">Highlands Coffee Tết 2022</div>
-      <div class="mcard-sub">The Friday · 2022</div>
-      <div class="mcard-tags"><span class="mcard-tag tag-r">IMC</span><span class="mcard-tag tag-y">Tết</span></div>
-    </div>
-  </a>
-
-  <a href="https://www.facebook.com/" target="_blank" class="mcard" data-tags="social freelance">
-    <div class="mcard-poster" style="background:linear-gradient(160deg,#100a20,#201535,#3a1f55);">
-      <span class="mcard-emoji">😂</span>
-      <div class="poster-gradient"></div>
-    </div>
-    <div class="mcard-badge"><span class="badge-hot">HOT</span><span class="badge-ep">EP.05</span></div>
-    <div class="mcard-rating">★ 9.8</div>
-    <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
-    <div class="mcard-info">
-      <div class="mcard-title">Laughs Per Minute</div>
-      <div class="mcard-sub">Fanpage · Social Media</div>
-      <div class="mcard-tags"><span class="mcard-tag tag-g">Social</span><span class="mcard-tag tag-p">Comedy</span></div>
-    </div>
-  </a>
-
-  <a href="https://www.behance.net/gallery/205844851/SOCIAL-CONTENT-NCT-ENGLISH-CENTER" target="_blank" class="mcard" data-tags="social freelance">
-    <div class="mcard-poster" style="background:linear-gradient(160deg,#051520,#0a2535,#103a50);">
-      <span class="mcard-emoji">📚</span>
-      <div class="poster-gradient"></div>
-    </div>
-    <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">EP.06</span></div>
-    <div class="mcard-rating">★ 8.7</div>
-    <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
-    <div class="mcard-info">
-      <div class="mcard-title">NCT English Center</div>
-      <div class="mcard-sub">Freelance · 2025</div>
-      <div class="mcard-tags"><span class="mcard-tag tag-g">Social</span><span class="mcard-tag tag-b">Education</span></div>
-    </div>
-  </a>
-
-  <a href="https://www.behance.net/gallery/205472965/TET-CAMPAIGN-XUI-HAY-VUI" target="_blank" class="mcard" data-tags="imc tet">
-    <div class="mcard-poster" style="background:linear-gradient(160deg,#1a1200,#352200,#553500);">
-      <span class="mcard-emoji">🧧</span>
-      <div class="poster-gradient"></div>
-    </div>
-    <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">EP.07</span></div>
-    <div class="mcard-rating">★ 9.0</div>
-    <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
-    <div class="mcard-info">
-      <div class="mcard-title">Tết — Xui Hay Vui</div>
-      <div class="mcard-sub">Happiness Saigon · 2025</div>
-      <div class="mcard-tags"><span class="mcard-tag tag-r">IMC</span><span class="mcard-tag tag-y">Tết</span></div>
-    </div>
-  </a>
-
-  <a href="https://www.behance.net/gallery/206291545/SOCIAL-MEDIA-MANAGEMENT-VIETKIEUCOM" target="_blank" class="mcard" data-tags="social freelance">
-    <div class="mcard-poster" style="background:linear-gradient(160deg,#081520,#102030,#183045);">
-      <span class="mcard-emoji">🌏</span>
-      <div class="poster-gradient"></div>
-    </div>
-    <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">EP.08</span></div>
-    <div class="mcard-rating">★ 8.5</div>
-    <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
-    <div class="mcard-info">
-      <div class="mcard-title">Vietkieu.com Social</div>
-      <div class="mcard-sub">Freelance · 2025</div>
-      <div class="mcard-tags"><span class="mcard-tag tag-g">Social</span><span class="mcard-tag tag-b">Diaspora</span></div>
-    </div>
-  </a>
-
-  <a href="https://www.behance.net/gallery/205508993/CA-R-COFFEE-SHOP-NEW-PRODUCT-LAUNCH-CAMPAIGN" target="_blank" class="mcard" data-tags="social freelance fb">
-    <div class="mcard-poster" style="background:linear-gradient(160deg,#0a180a,#153025,#1a4030);">
-      <span class="mcard-emoji">☕</span>
-      <div class="poster-gradient"></div>
-    </div>
-    <div class="mcard-badge"><span class="badge-new">NEW</span><span class="badge-ep">EP.09</span></div>
-    <div class="mcard-rating">★ 8.8</div>
-    <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
-    <div class="mcard-info">
-      <div class="mcard-title">Cà Rề Coffee Launch</div>
-      <div class="mcard-sub">Freelance · 2025</div>
-      <div class="mcard-tags"><span class="mcard-tag tag-g">Social</span><span class="mcard-tag tag-r">F&B</span></div>
-    </div>
-  </a>
-
-  <a href="https://www.behance.net/gallery/132727275/ANIMATED-TUTORIAL-VIDEO" target="_blank" class="mcard" data-tags="tvc">
-    <div class="mcard-poster" style="background:linear-gradient(160deg,#151020,#251828,#352035);">
-      <span class="mcard-emoji">🎬</span>
-      <div class="poster-gradient"></div>
-    </div>
-    <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">EP.10</span></div>
-    <div class="mcard-rating">★ 8.6</div>
-    <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
-    <div class="mcard-info">
-      <div class="mcard-title">Animated Tutorial Script</div>
-      <div class="mcard-sub">The Friday · 2022</div>
-      <div class="mcard-tags"><span class="mcard-tag tag-p">TVC</span><span class="mcard-tag tag-b">Script</span></div>
-    </div>
-  </a>
-
-  <a href="https://www.behance.net/gallery/205501979/NON-PROFIT-PROJECT-WALL-OF-TALISMANS" target="_blank" class="mcard" data-tags="nonprofit">
-    <div class="mcard-poster" style="background:linear-gradient(160deg,#001818,#003030,#004848);">
-      <span class="mcard-emoji">🪬</span>
-      <div class="poster-gradient"></div>
-    </div>
-    <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">EP.11</span></div>
-    <div class="mcard-rating">★ 8.4</div>
-    <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
-    <div class="mcard-info">
-      <div class="mcard-title">Wall of Talismans</div>
-      <div class="mcard-sub">Non-Profit · 2025</div>
-      <div class="mcard-tags"><span class="mcard-tag tag-b">Non-Profit</span><span class="mcard-tag tag-g">Culture</span></div>
-    </div>
-  </a>
-
-  <a href="https://www.behance.net/gallery/127556303/PADMASK" target="_blank" class="mcard" data-tags="imc">
-    <div class="mcard-poster" style="background:linear-gradient(160deg,#0a0010,#18002a,#280040);">
-      <span class="mcard-emoji">😷</span>
-      <div class="poster-gradient"></div>
-    </div>
-    <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">EP.12</span></div>
-    <div class="mcard-rating">★ 8.3</div>
-    <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
-    <div class="mcard-info">
-      <div class="mcard-title">PADMASK Campaign</div>
-      <div class="mcard-sub">The Friday · 2022</div>
-      <div class="mcard-tags"><span class="mcard-tag tag-p">Brand</span><span class="mcard-tag tag-r">Health</span></div>
-    </div>
-  </a>
-
-</div>
-
-<!-- SPECIALS -->
-<div class="section">
-  <div class="section-header">
-    <span class="section-title">Đặc Biệt — Special Features</span>
-  </div>
-</div>
-<div class="special-row">
-  <div class="special-card">
-    <div class="sc-inner sc-bg-a">
-      <div class="sc-eyebrow">⭐ Social Media Project</div>
-      <div class="sc-title">LAUGHS PER<br>MINUTE</div>
-      <p class="sc-desc">Comedy fanpage được xây từ con số 0. Content strategy, copywriting, và community management — chứng minh rằng humor là hình thức marketing cao nhất.</p>
-      <div class="sc-action">► Comedy · Social · Brand Building</div>
-    </div>
-  </div>
-  <div class="special-card">
-    <div class="sc-inner sc-bg-b">
-      <div class="sc-eyebrow">📋 Work Experience</div>
-      <div class="sc-title">THE COPYWRITER<br>JOURNEY</div>
-      <p class="sc-desc">Junior Copywriter tại The Friday → Creative Copywriter tại Happiness Saigon. 3–5 năm viết cho global & local brands. Hiện nhận freelance social media & brand building.</p>
-      <div class="sc-action">► Available for freelance — HCMC & Remote</div>
-    </div>
-  </div>
-</div>
-
-<!-- ABOUT / CONTACT -->
-<div class="section" id="contact">
-  <div class="section-header">
-    <span class="section-title">Thông Tin — About & Contact</span>
-  </div>
-</div>
-<div class="about-bar">
-  <div class="about-item">
-    <div class="about-label">Name</div>
-    <div class="about-value">Võ Văn Vĩ</div>
-  </div>
-  <div class="about-item">
-    <div class="about-label">Role</div>
-    <div class="about-value">Creative Copywriter<br><span style="font-size:13px;color:var(--muted);">Happiness Saigon</span></div>
-  </div>
-  <div class="about-item">
-    <div class="about-label">Location</div>
-    <div class="about-value">Ho Chi Minh City<br><span style="font-size:13px;color:var(--muted);">Vietnam 🇻🇳</span></div>
-  </div>
-  <div class="about-item">
-    <div class="about-label">Email</div>
-    <div class="about-value"><a href="mailto:your@email.com">your@email.com</a></div>
-  </div>
-  <div class="about-item">
-    <div class="about-label">Behance</div>
-    <div class="about-value"><a href="https://www.behance.net/vovanvi" target="_blank">behance.net/vovanvi</a></div>
-  </div>
-  <div class="about-item">
-    <div class="about-label">Available For</div>
-    <div class="about-value" style="color:var(--gold);">Freelance & Full-time</div>
-  </div>
-</div>
-
-<!-- FOOTER -->
-<footer class="rp-footer">
-  <div>
-    <div class="footer-brand">VÕ VĂN <span>VĨ</span> · Creative Copywriter</div>
-    <div class="footer-sub">Ho Chi Minh City · behance.net/vovanvi · Available for Freelance</div>
-  </div>
-  <div class="footer-links">
-    <a href="https://www.behance.net/vovanvi" target="_blank" class="flink">Behance ↗</a>
-    <a href="https://www.linkedin.com/in/vovanvi" target="_blank" class="flink">LinkedIn ↗</a>
-    <a href="mailto:your@email.com" class="flink">Email ↗</a>
-  </div>
-  <div class="footer-copy">© 2026 Võ Văn Vĩ Portfolio · All rights reserved · HCMC, Vietnam</div>
-</footer>
 
 <script>
-function filterCards(tag, btn) {
-  document.querySelectorAll('.genre-tag').forEach(b => b.classList.remove('active'));
+// =================== PROJECT DATA ===================
+const projects = {
+  'highlands-rebrand': {
+    emoji:'☕', bg:'linear-gradient(160deg,#1a0800,#4a1500,#8a3000)',
+    overlayColor:'rgba(140,50,0,0.55)',
+    ep:'01', rating:'★ 9.5',
+    title:'HIGHLANDS COFFEE REBRANDING',
+    client:'Highlands Coffee', agency:'Happiness Saigon', year:'2024', type:'IMC Campaign · Rebranding',
+    tags:[{t:'IMC',c:'tag-r'},{t:'Rebranding',c:'tag-y'},{t:'F&B',c:'tag-r'}],
+    behance:'https://www.behance.net/gallery/192527573/Highlands-Coffee-Rebranding-Campaign',
+    description:'Một trong những dự án marking điểm trong sự nghiệp — đưa thương hiệu cà phê quốc dân Highlands Coffee bước vào một chương mới. Campaign này không chỉ là refresh visual mà là toàn bộ câu chuyện thương hiệu được kể lại từ đầu.',
+    insight:'"Highlands không chỉ bán cà phê — họ bán một khoảng thời gian của người Việt. Rebranding phải giữ lại linh hồn đó, trong khi nói chuyện với thế hệ mới."',
+    deliverables:['Concept campaign toàn diện cho rebranding','Copy cho TVC, OOH, digital và in-store','Brand messaging framework mới','Social media content direction','Campaign tagline và key messages']
+  },
+  'mastercard': {
+    emoji:'💳', bg:'linear-gradient(160deg,#050a1a,#0a1530,#152050)',
+    overlayColor:'rgba(0,30,100,0.55)',
+    ep:'01', rating:'★ 9.3',
+    title:'MASTERCARD DRAGON CURSE RITUAL',
+    client:'Mastercard', agency:'Happiness Saigon', year:'2024', type:'IMC Campaign',
+    tags:[{t:'IMC',c:'tag-r'},{t:'Mythology',c:'tag-p'},{t:'Finance',c:'tag-b'}],
+    behance:'https://www.behance.net/gallery/205543063/MASTERCARD-DRAGON-CURSE-RITUAL',
+    description:'Biến một campaign tài chính thành một nghi lễ huyền thoại. Dragon Curse Ritual lấy cảm hứng từ truyền thuyết rồng Việt Nam — kết hợp thần thoại dân gian với brand messaging của Mastercard để tạo ra một campaign không thể quên.',
+    insight:'"Người ta không nhớ quảng cáo — họ nhớ cảm giác. Khi thanh toán bằng Mastercard được đặt trong ngữ cảnh của một nghi lễ thiêng liêng, hành động đơn giản đó trở thành một khoảnh khắc có ý nghĩa."',
+    deliverables:['Campaign concept dựa trên thần thoại rồng Việt Nam','Script cho TVC và video content','Copy cho digital campaign và social','Ritual experience copywriting','Key visual taglines']
+  },
+  'spotify': {
+    emoji:'🎵', bg:'linear-gradient(160deg,#051505,#0a250a,#104010)',
+    overlayColor:'rgba(20,80,20,0.55)',
+    ep:'03', rating:'★ 8.9',
+    title:'SPOTIFY ALWAYS-ON SOCIAL CONTENT',
+    client:'Spotify', agency:'The Friday', year:'2022', type:'Social Media Content',
+    tags:[{t:'Social',c:'tag-g'},{t:'Music',c:'tag-b'},{t:'Always-On',c:'tag-g'}],
+    behance:'https://www.behance.net/gallery/127416207/Spotify-Social-Always-on-Content',
+    description:'Viết always-on content cho một trong những thương hiệu âm nhạc lớn nhất thế giới tại thị trường Việt Nam. Thử thách là duy trì một giọng nói nhất quán — vui tươi, culturally-aware, và luôn relevant — qua hàng trăm posts mỗi tháng.',
+    insight:'"Spotify không bán nhạc — họ bán cảm xúc và ký ức. Mỗi post phải kéo được một sợi dây cảm xúc, khiến người đọc muốn mở app và nghe ngay."',
+    deliverables:['Monthly content calendar và copy','Caption writing cho Facebook & Instagram','Campaign concept cho local music events','Playlist naming và description copy','Cultural moment content (Tết, 8/3, ...)']
+  },
+  'highlands-tet': {
+    emoji:'☕', bg:'linear-gradient(160deg,#1a0500,#350a00,#601000)',
+    overlayColor:'rgba(100,30,0,0.55)',
+    ep:'04', rating:'★ 9.1',
+    title:'HIGHLANDS COFFEE TẾT CAMPAIGN 2022',
+    client:'Highlands Coffee', agency:'The Friday', year:'2022', type:'IMC Campaign · Tết',
+    tags:[{t:'IMC',c:'tag-r'},{t:'Tết',c:'tag-y'},{t:'F&B',c:'tag-r'}],
+    behance:'https://www.behance.net/gallery/135864145/HIGHLANDS-COFFEE-TET-CAMPAIGN-2022',
+    description:'Tết là khoảnh khắc cảm xúc lớn nhất trong năm của người Việt — và đây là dịp để Highlands Coffee kể câu chuyện của mình như một người bạn đồng hành trong hành trình về nhà. Campaign này viết về sự sum vầy, về những cốc cà phê chia sẻ cùng gia đình.',
+    insight:'"Tết không phải về sản phẩm. Tết là về cảm giác được về nhà. Campaign thành công khi người xem không thấy quảng cáo — họ thấy chính mình trong đó."',
+    deliverables:['Concept và big idea cho campaign Tết','TVC script và storyboard copy','OOH copywriting','Social content series cho mùa Tết','In-store POS copy']
+  },
+  'laughs': {
+    emoji:'😂', bg:'linear-gradient(160deg,#0f0820,#1e1038,#2e1850)',
+    overlayColor:'rgba(60,20,120,0.55)',
+    ep:'01', rating:'★ 9.8',
+    title:'LAUGHS PER MINUTE',
+    client:'Personal Project', agency:'Freelance / Self-owned', year:'2023–nay', type:'Social Media · Comedy Fanpage',
+    tags:[{t:'Social',c:'tag-g'},{t:'Comedy',c:'tag-p'},{t:'Personal Brand',c:'tag-b'}],
+    behance:'https://www.facebook.com/',
+    description:'Dự án cá nhân mà Vĩ tự xây từ đầu — một fanpage comedy kết hợp giữa copywriting sắc bén và hài kịch stand-up. Laughs Per Minute là bằng chứng thực tế rằng Vĩ không chỉ hiểu cách viết — mà còn hiểu cách khiến người ta dừng lại, cười, và quay lại.',
+    insight:'"Comedy là marketing ở dạng thuần túy nhất. Khi ai đó cười vì content của bạn, họ đã tin bạn. Và niềm tin là thứ mọi thương hiệu đều muốn mua nhưng không thể."',
+    deliverables:['Xây dựng fanpage từ zero — concept, tone of voice, visual direction','Viết toàn bộ content: caption, script, punchlines','Community management và audience engagement','Content calendar và posting strategy','Stand-up comedy material development']
+  },
+  'nct': {
+    emoji:'📚', bg:'linear-gradient(160deg,#030e18,#081a28,#0e2838)',
+    overlayColor:'rgba(10,50,90,0.55)',
+    ep:'02', rating:'★ 8.7',
+    title:'NCT ENGLISH CENTER — SOCIAL CONTENT',
+    client:'NCT English Center', agency:'Freelance', year:'2025', type:'Social Media Management',
+    tags:[{t:'Social',c:'tag-g'},{t:'Education',c:'tag-b'},{t:'Freelance',c:'tag-p'}],
+    behance:'https://www.behance.net/gallery/205844851/SOCIAL-CONTENT-NCT-ENGLISH-CENTER',
+    description:'Xây dựng toàn bộ social media presence cho NCT English Center từ đầu. Từ tone of voice cho đến content calendar — tạo ra một thương hiệu giáo dục vừa chuyên nghiệp vừa đủ gần gũi để thu hút học viên mới.',
+    insight:'"Một trung tâm Anh ngữ không nên nói chuyện như một cuốn sách giáo khoa. Học viên tìm đến NCT không chỉ học tiếng Anh — họ muốn tự tin hơn. Copy phải phản ánh điều đó."',
+    deliverables:['Brand voice và tone of voice guide','Monthly content calendar','Caption writing cho Facebook & Instagram','Student testimonial content','Event và enrollment campaign copy']
+  },
+  'xui-hay-vui': {
+    emoji:'🧧', bg:'linear-gradient(160deg,#180e00,#301800,#502500)',
+    overlayColor:'rgba(80,40,0,0.55)',
+    ep:'03', rating:'★ 9.0',
+    title:'TẾT CAMPAIGN — XUI HAY VUI',
+    client:'Undisclosed Client', agency:'Happiness Saigon', year:'2025', type:'IMC Campaign · Tết',
+    tags:[{t:'IMC',c:'tag-r'},{t:'Tết',c:'tag-y'},{t:'Cultural',c:'tag-p'}],
+    behance:'https://www.behance.net/gallery/205472965/TET-CAMPAIGN-XUI-HAY-VUI',
+    description:'"Xui hay Vui?" — một câu hỏi chỉ người Việt mới thực sự hiểu. Campaign này khai thác nỗi lo về xui xẻo đầu năm của người Việt và biến nó thành một celebration. Khi mọi thứ "xui" đều có thể trở thành "vui" nếu bạn nhìn đúng cách.',
+    insight:'"Người Việt có mối quan hệ rất phức tạp với sự xui xẻo trong dịp Tết. Thay vì bỏ qua nỗi lo đó, campaign này ôm lấy nó và lật ngược hoàn toàn."',
+    deliverables:['Campaign big idea và concept','TVC script','Social content series','Key visual tagline và copy','Campaign mechanics copywriting']
+  },
+  'vietkieu': {
+    emoji:'🌏', bg:'linear-gradient(160deg,#050f18,#0a1e2a,#102a3a)',
+    overlayColor:'rgba(10,40,70,0.55)',
+    ep:'EP.08', rating:'★ 8.5',
+    title:'VIETKIEU.COM — SOCIAL MEDIA MANAGEMENT',
+    client:'Vietkieu.com', agency:'Freelance', year:'2025', type:'Social Media Management',
+    tags:[{t:'Social',c:'tag-g'},{t:'Diaspora',c:'tag-b'},{t:'Freelance',c:'tag-p'}],
+    behance:'https://www.behance.net/gallery/206291545/SOCIAL-MEDIA-MANAGEMENT-VIETKIEUCOM',
+    description:'Quản lý social media cho một platform kết nối cộng đồng người Việt hải ngoại với quê hương. Thử thách đặc biệt: viết content phải chạm được cả hai đối tượng — người Việt xa xứ luôn nhớ nhà, và người trong nước tò mò về cuộc sống nước ngoài.',
+    insight:'"Người Việt kiều mang theo Việt Nam trong tim — dù họ đang ở đâu. Content không cần cố làm họ nhớ quê hương. Chỉ cần khơi đúng ký ức là đủ."',
+    deliverables:['Social media strategy cho hai target audiences','Content calendar hàng tháng','Caption writing bilingual (VI/EN)','Community engagement copywriting','Cultural moment content']
+  },
+  'ca-re': {
+    emoji:'☕', bg:'linear-gradient(160deg,#081508,#102010,#183018)',
+    overlayColor:'rgba(20,60,20,0.55)',
+    ep:'EP.09', rating:'★ 8.8',
+    title:'CÀ RỀ COFFEE — NEW PRODUCT LAUNCH',
+    client:'Cà Rề Coffee Shop', agency:'Freelance', year:'2025', type:'Product Launch · Social Media',
+    tags:[{t:'Social',c:'tag-g'},{t:'F&B',c:'tag-r'},{t:'Freelance',c:'tag-p'}],
+    behance:'https://www.behance.net/gallery/205508993/CA-R-COFFEE-SHOP-NEW-PRODUCT-LAUNCH-CAMPAIGN',
+    description:'Ra mắt sản phẩm mới cho một quán cà phê local tại HCMC — biến việc tung ra một ly nước mới thành một sự kiện mà cả khu phố muốn tham gia. Campaign này chứng minh rằng ngân sách nhỏ không có nghĩa là impact nhỏ.',
+    insight:'"Quán local có một lợi thế mà brand lớn không có: sự gần gũi. Copy không cần phải hoành tráng — chỉ cần đúng người, đúng cảm giác, đúng lúc."',
+    deliverables:['Launch campaign concept','Social content series cho product reveal','Caption writing cho Facebook & Instagram','In-store và menu copy','Story series dẫn đến ngày ra mắt']
+  },
+  'animated': {
+    emoji:'🎬', bg:'linear-gradient(160deg,#100d18,#1e1628,#2e2038)',
+    overlayColor:'rgba(50,30,80,0.55)',
+    ep:'10', rating:'★ 8.6',
+    title:'ANIMATED TUTORIAL VIDEO SCRIPT',
+    client:'Undisclosed Client', agency:'The Friday', year:'2022', type:'TVC · Scriptwriting',
+    tags:[{t:'TVC',c:'tag-p'},{t:'Script',c:'tag-b'},{t:'Animation',c:'tag-p'}],
+    behance:'https://www.behance.net/gallery/132727275/ANIMATED-TUTORIAL-VIDEO',
+    description:'Scriptwriting cho một animated explainer video — biến thông tin phức tạp thành một câu chuyện đơn giản, rõ ràng và đủ hấp dẫn để người xem không bỏ qua. Mỗi giây trong video đều phải earned.',
+    insight:'"Tutorial video thất bại khi nó cố giải thích quá nhiều. Script thành công là script biết bỏ đi những gì không cần thiết, và giữ lại đúng một thứ: sự rõ ràng."',
+    deliverables:['Full script cho animated video','Storyboard copywriting','Voiceover direction','Scene-by-scene narrative flow','Final edit và revision rounds']
+  },
+  'talismans': {
+    emoji:'🪬', bg:'linear-gradient(160deg,#001515,#002828,#003535)',
+    overlayColor:'rgba(0,60,60,0.55)',
+    ep:'04', rating:'★ 8.4',
+    title:'WALL OF TALISMANS — NON-PROFIT PROJECT',
+    client:'Non-Profit Organization', agency:'Happiness Saigon', year:'2025', type:'Non-Profit Campaign',
+    tags:[{t:'Non-Profit',c:'tag-b'},{t:'Culture',c:'tag-g'},{t:'Community',c:'tag-g'}],
+    behance:'https://www.behance.net/gallery/205501979/NON-PROFIT-PROJECT-WALL-OF-TALISMANS',
+    description:'Một dự án phi lợi nhuận mang chiều sâu văn hóa và tâm linh Việt Nam. Wall of Talismans — nơi những câu chuyện, lời nguyện cầu và ký ức của con người được giữ lại. Copy ở đây không bán sản phẩm — nó kết nối người với người.',
+    insight:'"Đây là lần đầu tiên tôi viết không phải để thuyết phục ai mua gì. Mà để giúp người ta cảm thấy họ không đơn độc. Và đó là loại copywriting khó nhất — và ý nghĩa nhất."',
+    deliverables:['Campaign concept và narrative','Installation copywriting','Community engagement messaging','Storytelling framework','Print và digital copy']
+  },
+  'padmask': {
+    emoji:'😷', bg:'linear-gradient(160deg,#080010,#120020,#1e0035)',
+    overlayColor:'rgba(40,0,80,0.55)',
+    ep:'02', rating:'★ 8.3',
+    title:'PADMASK — PROACTIVE IDEA',
+    client:'PADMASK', agency:'The Friday', year:'2022', type:'Proactive · Brand Campaign',
+    tags:[{t:'Brand',c:'tag-p'},{t:'Health',c:'tag-r'},{t:'Proactive',c:'tag-r'}],
+    behance:'https://www.behance.net/gallery/127556303/PADMASK',
+    description:'Brand campaign cho PADMASK — một thương hiệu khẩu trang trong bối cảnh hậu COVID. Thử thách là làm cho một sản phẩm gắn liền với dịch bệnh trở thành một accessory lifestyle mà người ta chủ động muốn đeo.',
+    insight:'"Sau COVID, khẩu trang không còn là nỗi sợ — nó có thể là statement. Campaign này về việc reframe hoàn toàn nhận thức của người dùng về một sản phẩm."',
+    deliverables:['Brand positioning và messaging strategy','Campaign concept','Social content series','Product copy và taglines','Digital campaign copy']
+  },
+  'kotex': {
+    emoji:'🌸', bg:'linear-gradient(160deg,#200010,#400020,#700040)',
+    overlayColor:'rgba(100,0,40,0.55)',
+    ep:'02', rating:'★ 9.2',
+    title:'KOTEX TẾT CAMPAIGN',
+    client:'Kotex', agency:'TBD', year:'TBD', type:'IMC Campaign · Tết',
+    tags:[{t:'IMC',c:'tag-r'},{t:'Tết',c:'tag-y'},{t:'FMCG',c:'tag-p'}],
+    behance:'https://www.behance.net/vovanvi',
+    description:'Chi tiết campaign sẽ được cập nhật sớm. Stay tuned.',
+    insight:'"Coming soon."',
+    deliverables:['Chi tiết sẽ được cập nhật sớm']
+  },
+  'thuan-phat': {
+    emoji:'🐟', bg:'linear-gradient(160deg,#1a1000,#352000,#553200)',
+    overlayColor:'rgba(85,50,0,0.55)',
+    ep:'05', rating:'★ 9.0',
+    title:'THUẬN PHÁT FISH SAUCE TẾT CAMPAIGN',
+    client:'Thuận Phát', agency:'TBD', year:'TBD', type:'IMC Campaign · Tết',
+    tags:[{t:'IMC',c:'tag-r'},{t:'Tết',c:'tag-y'},{t:'F&B',c:'tag-r'}],
+    behance:'https://www.behance.net/vovanvi',
+    description:'Chi tiết campaign sẽ được cập nhật sớm. Stay tuned.',
+    insight:'"Coming soon."',
+    deliverables:['Chi tiết sẽ được cập nhật sớm']
+  },
+  'skoda': {
+    emoji:'🚗', bg:'linear-gradient(160deg,#001a0a,#003018,#005028)',
+    overlayColor:'rgba(0,60,30,0.55)',
+    ep:'06', rating:'★ 9.1',
+    title:'SKODA VIỆT NAM LAUNCHING CAMPAIGN',
+    client:'Skoda Vietnam', agency:'TBD', year:'TBD', type:'IMC Campaign · Launch',
+    tags:[{t:'IMC',c:'tag-r'},{t:'Auto',c:'tag-b'},{t:'Launch',c:'tag-g'}],
+    behance:'https://www.behance.net/vovanvi',
+    description:'Chi tiết campaign sẽ được cập nhật sớm. Stay tuned.',
+    insight:'"Coming soon."',
+    deliverables:['Chi tiết sẽ được cập nhật sớm']
+  },
+  'chupa-chups': {
+    emoji:'🍭', bg:'linear-gradient(160deg,#200a20,#401040,#601860)',
+    overlayColor:'rgba(60,10,80,0.55)',
+    ep:'07', rating:'★ 8.9',
+    title:'CHUPA CHUPS',
+    client:'Chupa Chups', agency:'TBD', year:'TBD', type:'Brand Campaign',
+    tags:[{t:'Brand',c:'tag-p'},{t:'FMCG',c:'tag-g'}],
+    behance:'https://www.behance.net/vovanvi',
+    description:'Chi tiết campaign sẽ được cập nhật sớm. Stay tuned.',
+    insight:'"Coming soon."',
+    deliverables:['Chi tiết sẽ được cập nhật sớm']
+  },
+  'hygiene': {
+    emoji:'🧴', bg:'linear-gradient(160deg,#001020,#002040,#003060)',
+    overlayColor:'rgba(0,30,80,0.55)',
+    ep:'08', rating:'★ 8.7',
+    title:'HYGIENE TẾT CAMPAIGN',
+    client:'Hygiene', agency:'TBD', year:'TBD', type:'IMC Campaign · Tết',
+    tags:[{t:'IMC',c:'tag-r'},{t:'Tết',c:'tag-y'},{t:'FMCG',c:'tag-p'}],
+    behance:'https://www.behance.net/vovanvi',
+    description:'Chi tiết campaign sẽ được cập nhật sớm. Stay tuned.',
+    insight:'"Coming soon."',
+    deliverables:['Chi tiết sẽ được cập nhật sớm']
+  }
+};
+
+// =================== NAVIGATION ===================
+function showHome(){
+  document.getElementById('page-home').classList.add('active');
+  document.getElementById('page-project').classList.remove('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function showProject(id){
+  const p = projects[id];
+  if(!p) return;
+
+  const tagHTML = p.tags.map(t=>`<span class="mcard-tag ${t.c}">${t.t}</span>`).join('');
+
+  // Build "more projects" excluding current
+  const others = Object.keys(projects).filter(k=>k!==id).slice(0,4);
+  const moreHTML = others.map(k=>{
+    const o = projects[k];
+    return `<div class="mcard" onclick="showProject('${k}')">
+      <div class="mcard-poster" style="background:${o.bg};">
+        <span class="mcard-emoji">${o.emoji}</span><div class="poster-gradient"></div>
+      </div>
+      <div class="mcard-badge"><span class="badge-ep">${o.ep}</span></div>
+      <div class="mcard-rating">${o.rating}</div>
+      <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
+      <div class="mcard-info">
+        <div class="mcard-title">${o.title.length>22?o.title.substring(0,22)+'...':o.title}</div>
+        <div class="mcard-sub">${o.client}</div>
+        <div class="mcard-tags">${o.tags.map(t=>`<span class="mcard-tag ${t.c}">${t.t}</span>`).join('')}</div>
+      </div>
+    </div>`;
+  }).join('');
+
+  document.getElementById('proj-content').innerHTML = `
+    <div class="proj-hero" style="background:${p.bg};">
+      ${p.coverImg ? `<img src="${p.coverImg}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.35;" />` : `<div class="proj-hero-bg">${p.emoji}</div>`}
+      <div class="proj-hero-overlay" style="background:${p.overlayColor};opacity:0.4;position:absolute;inset:0;"></div>
+      <div class="proj-hero-bottom"></div>
+      <div class="proj-hero-content">
+        <div class="proj-breadcrumb">
+          <button onclick="showHome()">← Trang Chủ</button>
+          <span>/</span>
+          <span>${p.client}</span>
+        </div>
+        <div class="proj-badge-row">
+          <span class="hd-badge">HD</span>
+          <span class="badge-ep">${p.ep}</span>
+          <span class="mcard-rating" style="position:static;">${p.rating}</span>
+        </div>
+        <div class="proj-title">${p.title}</div>
+        <div class="proj-meta-row">
+          <span>🏢 ${p.agency}</span>
+          <span>📅 ${p.year}</span>
+          <span>🎬 ${p.type}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-body">
+      <div class="proj-main">
+        ${p.coverImg ? `<img src="${p.coverImg}" style="width:100%;border-radius:8px;margin-bottom:24px;border:1px solid var(--border);" />` : ''}
+        ${p.youtube ? `
+        <div class="proj-section-label">Manifesto Film</div>
+        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;margin-bottom:24px;border:1px solid var(--border);">
+          <iframe src="${p.youtube}" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" allowfullscreen></iframe>
+        </div>` : ''}
+
+        <div class="proj-section-label">About</div>
+        <p class="proj-description">${p.description}</p>
+
+        <div class="proj-section-label">Insight</div>
+        <div class="proj-challenge"><p>${p.insight}</p></div>
+
+        <div class="proj-section-label">Deliverables</div>
+        <div class="proj-deliverables">
+          ${p.deliverables.map(d=>`<div class="proj-del-item">${d}</div>`).join('')}
+        </div>
+      </div>
+
+      <div class="proj-sidebar">
+        <div class="proj-info-card">
+          <div class="proj-info-row">
+            <div class="proj-info-item">
+              <div class="pii-label">Client</div>
+              <div class="pii-value">${p.client}</div>
+            </div>
+            <div class="proj-info-item">
+              <div class="pii-label">Agency</div>
+              <div class="pii-value">${p.agency}</div>
+            </div>
+            <div class="proj-info-item">
+              <div class="pii-label">Năm</div>
+              <div class="pii-value">${p.year}</div>
+            </div>
+            <div class="proj-info-item">
+              <div class="pii-label">Loại</div>
+              <div class="pii-value">${p.type}</div>
+            </div>
+            ${p.role ? `<div class="proj-info-item"><div class="pii-label">Role</div><div class="pii-value" style="font-size:12px;line-height:1.5;">${p.role}</div></div>` : ''}
+            <div class="proj-info-item">
+              <div class="pii-label">Tags</div>
+              <div class="pii-tags">${tagHTML}</div>
+            </div>
+          </div>
+        </div>
+        <a href="${p.behance}" target="_blank" class="proj-behance-btn">Xem trên Behance ↗</a>
+        <button class="proj-back-btn" onclick="showHome()">← Quay lại Portfolio</button>
+      </div>
+    </div>
+
+    <div class="more-projects">
+      <div class="section-header" style="padding:0;margin-bottom:14px;">
+        <span class="section-title">Xem Thêm — More Projects</span>
+      </div>
+      <div class="more-grid">${moreHTML}</div>
+    </div>
+
+    <footer class="rp-footer" style="margin-top:24px;">
+      <div>
+        <div class="footer-brand">RỔ WORK · Võ Văn Vĩ</div>
+        <div class="footer-sub">Ho Chi Minh City · behance.net/vovanvi</div>
+      </div>
+      <div class="footer-links">
+        <button class="proj-back-btn" style="padding:6px 14px;" onclick="showHome()">← Portfolio</button>
+        <a href="mailto:your@email.com" class="flink">Hire Vĩ ↗</a>
+      </div>
+    </footer>
+  `;
+
+  document.getElementById('page-home').classList.remove('active');
+  document.getElementById('page-project').classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function filterCards(tag, btn){
+  document.querySelectorAll('.genre-tag').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
-  const cards = document.querySelectorAll('#movie-grid .mcard');
-  cards.forEach(card => {
-    if (tag === 'all') {
-      card.style.display = '';
-    } else {
-      const tags = card.getAttribute('data-tags') || '';
-      card.style.display = tags.includes(tag) ? '' : 'none';
-    }
+  document.querySelectorAll('#movie-grid .mcard').forEach(card=>{
+    const tags = card.getAttribute('data-tags')||'';
+    card.style.display = (tag==='all'||tags.includes(tag)) ? '' : 'none';
   });
 }
 
-// Smooth scroll for nav links
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const target = document.querySelector(a.getAttribute('href'));
-    if (target) { e.preventDefault(); target.scrollIntoView({behavior:'smooth'}); }
+// Load cover images into cards
+function loadCoverImages(){
+  Object.keys(projects).forEach(id => {
+    const p = projects[id];
+    if(p.coverImg){
+      const card = document.querySelector(`[onclick="showProject('${id}')"] .mcard-poster`);
+      if(card){
+        const img = card.querySelector('img');
+        const emoji = card.querySelector('.mcard-emoji');
+        if(img){ img.src = p.coverImg; img.style.opacity='1'; }
+        if(emoji){ emoji.style.display='none'; }
+      }
+    }
   });
-});
-</script>
+}
+document.addEventListener('DOMContentLoaded', loadCoverImages);
 
+function filterAndShow(tag){
+  showHome();
+  setTimeout(()=>{
+    const btn = [...document.querySelectorAll('.genre-tag')].find(b=>b.textContent.toLowerCase().includes(tag));
+    if(btn) filterCards(tag, btn);
+    document.getElementById('movie-grid').scrollIntoView({behavior:'smooth'});
+  }, 100);
+}
+</script>
 </body>
 </html>
