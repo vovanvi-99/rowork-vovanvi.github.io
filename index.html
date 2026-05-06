@@ -7,8 +7,79 @@
 <title>Võ Văn Vĩ — Creative Copywriter Portfolio</title>
 <meta content="Creative Copywriter tại HCMC. TVC, IMC Campaigns, Social Media." name="description"/>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&amp;family=Roboto:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+<style>
+.case-hero{
+    background:#04111d;
+    padding:120px 48px 80px;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.case-inner{
+    max-width:1400px;
+}
+.case-meta{
+    color:#8dc63f;
+    font-size:14px;
+    letter-spacing:6px;
+    margin-bottom:32px;
+    font-weight:700;
+}
+.case-title{
+    font-size:120px;
+    line-height:0.9;
+    font-weight:900;
+    color:white;
+    margin:0;
+    text-transform:uppercase;
+    letter-spacing:-4px;
+}
+.case-title span{
+    color:#8dc63f;
+}
+.case-line{
+    width:80px;
+    height:4px;
+    background:#8dc63f;
+    margin:48px 0;
+}
+.case-desc{
+    max-width:760px;
+    font-size:28px;
+    line-height:1.6;
+    color:rgba(255,255,255,0.55);
+    font-weight:500;
+}
+.case-section{
+    background:black;
+    padding:80px 48px 120px;
+}
+.section-label{
+    color:#8dc63f;
+    letter-spacing:6px;
+    font-size:14px;
+    font-weight:700;
+    margin-bottom:40px;
+}
+.section-title{
+    font-size:64px;
+    line-height:1.05;
+    color:white;
+    font-weight:900;
+    text-transform:uppercase;
+    margin-bottom:32px;
+}
+.section-title span{
+    color:#8dc63f;
+}
+.section-copy{
+    max-width:1000px;
+    color:rgba(255,255,255,0.6);
+    font-size:28px;
+    line-height:1.6;
+}
+</style>
 
-<link href="style.css" rel="stylesheet"/></head>
+</head>
 <body>
 <!-- TOPBAR (always visible) -->
 <nav class="topbar">
@@ -63,7 +134,7 @@
 </div>
 <div class="movie-grid" id="movie-grid">
 <div class="mcard" data-cluster="selected" onclick="showProject('highlands-rebrand')">
-<div class="mcard-poster" style="background:linear-gradient(160deg,#1a0a00,#2d1500,#401e00);"><img src="assets/image_0.jpeg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/><div class="poster-gradient"></div></div>
+<div class="mcard-poster" style="background:linear-gradient(160deg,#1a0a00,#2d1500,#401e00);"><img src="assets/highlands-thumb.png" style="width:100%;height:100%;object-fit:cover;display:block;"/><div class="poster-gradient"></div></div>
 <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">01</span></div>
 <div class="mcard-rating">★ 9.8</div>
 <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
@@ -74,7 +145,7 @@
 </div>
 </div>
 <div class="mcard" data-cluster="selected" onclick="showProject('kotex')">
-<div class="mcard-poster" style="background:linear-gradient(160deg,#1a0020,#2d0035,#40004a);"><img src="assets/image_1.jpeg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/><div class="poster-gradient"></div></div>
+<div class="mcard-poster" style="background:linear-gradient(160deg,#1a0020,#2d0035,#40004a);"><img src="assets/kotex-thumb.png" style="width:100%;height:100%;object-fit:cover;display:block;"/><div class="poster-gradient"></div></div>
 <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">02</span></div>
 <div class="mcard-rating">★ 9.5</div>
 <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
@@ -85,7 +156,7 @@
 </div>
 </div>
 <div class="mcard" data-cluster="selected" onclick="showProject('ca-re')">
-<div class="mcard-poster" style="background:linear-gradient(160deg,#0a1a00,#152d00,#1e4000);"><img src="assets/image_2.jpeg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/><div class="poster-gradient"></div></div>
+<div class="mcard-poster" style="background:linear-gradient(160deg,#0a1a00,#152d00,#1e4000);"><img src="assets/care-thumb.png" style="width:100%;height:100%;object-fit:cover;display:block;"/><div class="poster-gradient"></div></div>
 <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">03</span></div>
 <div class="mcard-rating">★ 9.1</div>
 <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
@@ -96,7 +167,7 @@
 </div>
 </div>
 <div class="mcard" data-cluster="selected" onclick="showProject('talismans')">
-<div class="mcard-poster" style="background:linear-gradient(160deg,#1a1500,#2d2200,#403000);"><img src="assets/image_3.jpeg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/><div class="poster-gradient"></div></div>
+<div class="mcard-poster" style="background:linear-gradient(160deg,#1a1500,#2d2200,#403000);"><img src="assets/wall-thumb.png" style="width:100%;height:100%;object-fit:cover;display:block;"/><div class="poster-gradient"></div></div>
 <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">04</span></div>
 <div class="mcard-rating">★ 9.3</div>
 <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
@@ -107,7 +178,7 @@
 </div>
 </div>
 <div class="mcard" data-cluster="selected" onclick="showProject('thuan-phat')">
-<div class="mcard-poster" style="background:linear-gradient(160deg,#0a1520,#102030,#1a3545);"><img src="assets/image_4.jpeg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/><div class="poster-gradient"></div></div>
+<div class="mcard-poster" style="background:linear-gradient(160deg,#0a1520,#102030,#1a3545);"><img src="assets/thuanphat-thumb.png" style="width:100%;height:100%;object-fit:cover;display:block;"/><div class="poster-gradient"></div></div>
 <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">05</span></div>
 <div class="mcard-rating">★ 8.6</div>
 <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
@@ -118,7 +189,7 @@
 </div>
 </div>
 <div class="mcard" data-cluster="selected" onclick="showProject('skoda')">
-<div class="mcard-poster" style="background:linear-gradient(160deg,#050a0f,#0a1520,#0d1f35);"><img src="assets/image_5.jpeg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/><div class="poster-gradient"></div></div>
+<div class="mcard-poster" style="background:linear-gradient(160deg,#050a0f,#0a1520,#0d1f35);"><img src="assets/skoda-thumb.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"/><div class="poster-gradient"></div></div>
 <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">06</span></div>
 <div class="mcard-rating">★ 9.2</div>
 <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
@@ -129,7 +200,7 @@
 </div>
 </div>
 <div class="mcard" data-cluster="selected" onclick="showProject('chupa-chups')">
-<div class="mcard-poster" style="background:linear-gradient(160deg,#2a0500,#500a00,#7a1000);"><img src="assets/image_6.jpeg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/><div class="poster-gradient"></div></div>
+<div class="mcard-poster" style="background:linear-gradient(160deg,#2a0500,#500a00,#7a1000);"><img src="assets/chupachups-thumb.png" style="width:100%;height:100%;object-fit:cover;display:block;"/><div class="poster-gradient"></div></div>
 <div class="mcard-badge"><span class="badge-hd">HD</span><span class="badge-ep">07</span></div>
 <div class="mcard-rating">★ 8.9</div>
 <div class="mcard-overlay"><div class="overlay-play"><div class="overlay-tri"></div></div></div>
@@ -141,14 +212,56 @@
 </div>
 </div>
 </div>
-
 <!-- =================== PROJECT PAGE =================== -->
 <div class="page" id="page-project">
 <div id="proj-content"></div>
 </div>
-
 <div class="proj-lightbox" id="lightbox" onclick="closeLightbox()">
 <img id="lightbox-img" src=""/>
 </div>
 <script src="script.js"></script></body>
 </html>
+<section class="case-hero thuanphat-hero">
+  <div class="case-inner">
+    <div class="case-meta">
+      THUẬN PHÁT · TẾT CAMPAIGN · 2023
+    </div>
+
+    <h1 class="case-title">
+      FOR THE REAL<br>
+      TASTE OF<br>
+      <span>TẾT.</span>
+    </h1>
+
+    <div class="case-line"></div>
+
+    <p class="case-desc">
+      Every Vietnamese family has their own special way to celebrate Tet.
+      They do it in a way making them feel comfortable.
+      That, to them, is a real Tet.
+    </p>
+  </div>
+</section>
+
+<section class="case-section">
+  <div class="case-inner">
+    <div class="section-label">
+      — THE INSIGHT
+    </div>
+
+    <h2 class="section-title">
+      THERE IS NO<br>
+      PERFECT WAY<br>
+      TO CELEBRATE TẾT.<br>
+      <span>
+        THERE'S ONLY<br>
+        YOUR FAMILY'S WAY.
+      </span>
+    </h2>
+
+    <p class="section-copy">
+      So Thuận Phát features and embraces all kinds of Tet
+      because that's what makes Tet real.
+    </p>
+  </div>
+</section>
